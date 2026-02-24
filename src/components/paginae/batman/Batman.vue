@@ -37,6 +37,7 @@ import { Toggle } from '@/components/ui/toggle'
 import CarrusImaginum from '@/components/CarrusImaginum.vue';
 
 import { scrollToSection } from '@/utils/scrollToSection';
+import { useMouseMotio } from '@/composables/useMouseMotio';
 
 
 
@@ -46,12 +47,9 @@ import { scrollToSection } from '@/utils/scrollToSection';
 
 const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"]; 
 
-interface Coordinatas {
-  x:number
-  y:number
-}
 
-const mousePositione = ref<Coordinatas>({x: 0, y: 0})
+const { cumMouseMove, cumMouseLeave, mousePositione } = useMouseMotio()
+
 
 const dies = ref<DateValue>()
 
@@ -73,25 +71,7 @@ onUnmounted(()=>
   window.removeEventListener('resize', handResize)
 )
 
-const cumMouseMove = (e: MouseEvent) => {
-  const rect = (e.target as HTMLElement).getBoundingClientRect()
-  const centerX = rect.width/2
-  const centerY = rect.height/2
 
-  const mouseX = e.clientX - rect.left
-  const mouseY = e.clientY - rect.top
-
-  mousePositione.value = {
-    x:(centerX - mouseX) *0.1,
-    y:(centerY - mouseY) *0.1
-
-  }
-
-}
-const cumMouseLeave = () => {
-  mousePositione.value = {x:0, y:0}
-  
-}
 </script>
 
 
