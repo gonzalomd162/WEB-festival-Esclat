@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { House, Phone, Mail, MapPin,X, InstagramIcon, LinkedinIcon, MessageCircle, Menu } from 'lucide-vue-next';
+import { 
+ 
+  Phone,
+  Mail,
+  MapPin,
+  X,
+  InstagramIcon,
+  LinkedinIcon,
+  MessageCircle,
+ 
+} from 'lucide-vue-next';
 
-import {
-  NavigationMenu,
 
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-
-  navigationMenuTriggerStyle
-} from '@/components/ui/navigation-menu'
 
 
 
@@ -31,13 +33,15 @@ import {
 
 /* import { Calendar } from '@/components/ui/calendar' */
 import type { DateValue } from 'reka-ui';
-import { onMounted, onUnmounted, ref } from 'vue';
+
 import Calendar from '@/components/ui/calendar/Calendar.vue';
-import { Toggle } from '@/components/ui/toggle'
+
 import CarrusImaginum from '@/components/CarrusImaginum.vue';
 
 import { scrollToSection } from '@/utils/scrollToSection';
 import { useMouseMotio } from '@/composables/useMouseMotio';
+import NavigatorPrimarius from '@/components/NavigatorPrimarius.vue';
+import { ref } from 'vue';
 
 
 
@@ -53,23 +57,28 @@ const { cumMouseMove, cumMouseLeave, mousePositione } = useMouseMotio()
 
 const dies = ref<DateValue>()
 
-const videreMenu = ref<boolean>(true)
+const menuItems = [
+  {
+    label:'Portada',
+    href: '#',
+    onClick: () => scrollToSection('#')
+  },
+    {
+    label:'Vehiculis',
+    href: '#vehiculis',
+    onClick: () => scrollToSection('#vehiculis')
+  },  {
+    label:'Imágenes',
+    href: '#videre',
+    onClick: () => scrollToSection('#videre')
+  },  {
+    label:'Contacto',
+    href: '#contactus',
+    onClick: () => scrollToSection('#contactus')
+  },
+]
 
-const handResize = () => {
-   if(window.innerWidth <= 640){
-    videreMenu.value= false;
-   } else{
-    videreMenu.value = true
-   }
-}
 
-onMounted(() => {
-  handResize()
-  window.addEventListener('resize', handResize)
-})
-onUnmounted(()=>
-  window.removeEventListener('resize', handResize)
-)
 
 
 </script>
@@ -79,54 +88,9 @@ onUnmounted(()=>
 
 <div class="batman">
 
-  <Toggle 
-    class="fixed top-2 right-4 bg-slate-500 "
-    @click="videreMenu = !videreMenu"
-  >
-    <Menu/>
-  </Toggle>
+  <NavigatorPrimarius :items="menuItems" home-route="/"/>
 
-  <div v-if="videreMenu"    class="extra-nav flex flex-col sm:flex-row justify-between px-3">
-    <RouterLink to="/">
-      <House class="icon-home" />
-    </RouterLink>
-
-    <NavigationMenu>
-      <NavigationMenuList class="flex flex-col sm:flex-row">
-        <NavigationMenuItem>
-          <a href="#" @click.prevent="scrollToSection('#')">
-            <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6a5acd] hover:text-white transition-all']">
-              Portada
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <a href="#vehiculis" @click.prevent="scrollToSection('#vehiculis')">
-            <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6a5acd] hover:text-white transition-all']">
-              Vehículos
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <a href="#videre" @click.prevent="scrollToSection('#videre')">
-            <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6a5acd] hover:text-white transition-all']">
-              Imágenes
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <a href="#contactus" @click.prevent="scrollToSection('#contactus')">
-            <NavigationMenuLink :class="[navigationMenuTriggerStyle(), 'text-md hover:bg-[#6a5acd] hover:text-white transition-all']">
-              Contacto
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  </div>
+  
 
   <header class="titulus">
     <h1>Batman</h1>
@@ -368,37 +332,7 @@ onUnmounted(()=>
 .batman{
     font-family: Arial, Helvetica, sans-serif;
 }
-.icon-home {
-    color: steelblue;
-    width: 3rem;
-    height: 3rem;
 
-}
-
-.icon-home:hover {
-    color: white;
-    background-color: blue;
-}
-.extra-nav {
-  background-color: white;
-  opacity: 0.7;
-  box-shadow: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  top: 0;
-  width: 11rem;
-  border-radius: 0 0 1rem 0;
-  z-index: 1;
-}
-
-@media (min-width: 640px){
-
-  .extra-nav {
-    width: 100%;
-    border-radius: 0;
-    opacity: 1;
-    left: 0;
-  }
-}
 
 .titulus-img {
   background-size: 100% 100%;
