@@ -3,6 +3,7 @@ defineProps<{
   eyebrow?: string;
   title: string;
 }>();
+//pongamos que añado un cometario
 </script>
 
 <template>
