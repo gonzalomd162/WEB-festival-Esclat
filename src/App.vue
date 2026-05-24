@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
-
-
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-<main>
-  <RouterView/>
-
-</main>
-    
+  <div class="min-h-dvh font-sans">
+    <RouterView />
+  </div>
 </template>
-
-<style scoped>
-
-</style>
