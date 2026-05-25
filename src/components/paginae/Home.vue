@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import posterIllustration from "@/assets/img/rana-gonzalo-roja.png";
-const ESCLAT = "/imagines/Esclat/Artboard 2-8.png";
 
 const links = [
-  { label: "Entradas", to: "/entradas" },
+  { label: "Tickets", to: "/entradas" },
   { label: "Cartelera", to: "/cartelera" },
   { label: "Sobre el Festival", to: "/sobre-el-festival" },
   { label: "Ubicación", to: "/ubicacion" },
@@ -15,12 +14,10 @@ const links = [
     <main
       class="relative flex min-h-dvh flex-col overflow-hidden bg-[#fcda4b] px-6 py-8 text-[#eb1d2b] sm:px-10 sm:py-12 lg:px-12 lg:py-14"
     >
-      <img
-        :src="ESCLAT"
-        alt="Esclat"
-        class="relative -ml-10 z-10 w-[min(78vw,42rem)] max-w-full object-contain sm:w-[min(70vw,46rem)] lg:w-[min(66vw,52rem)]"
-      />
-
+    <img 
+    class="flex w-200 h-auto"
+    src="/imagines/Esclat/Artboard 2-8.png" 
+    alt="">
       <nav
         aria-label="Navegacion principal"
         class="relative z-20 mt-auto flex flex-col items-start gap-4 pb-6 sm:gap-5 sm:pb-8 lg:pb-10"

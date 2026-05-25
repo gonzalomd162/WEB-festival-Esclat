@@ -9,7 +9,7 @@ const homeButtonArtwork = "/imagines/Esclat/Artboard 2_1-8.png";
     <RouterLink
       to="/"
       aria-label="Volver al inicio"
-      class="fixed right-4 top-4 z-50 block w-24 max-w-[28vw] sm:right-6 sm:top-6 sm:w-28 lg:w-32"
+      class="fixed right-4 top-4 z-50 block w-16 max-w-[22vw] sm:right-6 sm:top-6 sm:w-20 lg:w-24"
     >
       <img
         :src="homeButtonArtwork"
