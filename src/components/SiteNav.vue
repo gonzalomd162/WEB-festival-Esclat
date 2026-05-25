@@ -1,20 +1,20 @@
 <script setup lang="ts">
 const links = [
   { label: "Cartelera", to: "/cartelera" },
-  { label: "Sobre el festival", to: "/festival" },
-  { label: "Ubicación", to: "/ubicacion" },
-  { label: "Tickets", to: "/tickets" },
+  { label: "Sobre el festival", to: "/sobre-el-festival" },
+  { label: "Ubicacion", to: "/ubicacion" },
+  { label: "Entradas", to: "/entradas" },
 ];
 </script>
 
 <template>
   <nav
-    aria-label="Navegación principal"
+    aria-label="Navegacion principal"
     class="fixed left-0 top-0 z-30 grid w-full grid-cols-2 gap-y-4 px-5 py-5 text-[11px] font-light uppercase tracking-[0.22em] text-black/80 mix-blend-multiply sm:grid-cols-5 sm:px-8 lg:px-12"
   >
     <RouterLink
       to="/"
-      class="w-fit transition duration-300 hover:-translate-y-px hover:text-black"
+      class="font-hover-alt w-fit"
     >
       ESCLAT
     </RouterLink>
@@ -26,9 +26,9 @@ const links = [
         v-for="link in links"
         :key="link.to"
         :to="link.to"
-        class="group w-fit transition duration-300 hover:-translate-y-px hover:text-black"
+        class="font-hover-alt w-fit"
       >
-        <span class="border-b border-transparent pb-1 transition-[border-color,opacity] duration-300 group-hover:border-black/70">
+        <span class="border-b border-transparent pb-1">
           {{ link.label }}
         </span>
       </RouterLink>

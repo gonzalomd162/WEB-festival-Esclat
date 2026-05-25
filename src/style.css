@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Neue Haas Grotesk Text", Arial, sans-serif;
+  --font-sans: "39504", Arial, sans-serif;
   --font-neue-regular: "Neue Haas Grotesk Text Regular", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "39504";
+  src: url("/fonts/39504.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "39505";
+  src: url("/fonts/39505.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -44,10 +60,23 @@
 
   body {
     margin: 0;
+    font-family: "39504", Arial, sans-serif;
   }
 
   a {
     color: inherit;
     text-decoration: none;
   }
+}
+
+.font-title {
+  font-family: "Neue Haas Grotesk Text", Arial, sans-serif;
+}
+
+.font-hover-alt {
+  font-family: "39504", Arial, sans-serif;
+}
+
+.font-hover-alt:hover {
+  font-family: "39505", Arial, sans-serif;
 }
