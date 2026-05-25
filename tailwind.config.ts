@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Neue Haas Grotesk Text"', "Arial", "sans-serif"],
+        sans: ['"39504"', "Arial", "sans-serif"],
       },
     },
   },
