@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const posterIllustration = "/imagines/Esclat/pez rojo.png";
+const posterIllustration = "/imagines/Esclat/RATILLA.png";
 
 const links = [
   { label: "Tickets", to: "/entradas" },
@@ -30,7 +30,7 @@ const links = [
           v-for="link in links"
           :key="link.to"
           :to="link.to"
-          class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-normal leading-none tracking-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#FF2A2A]"
+          class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-normal leading-none tracking-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#eb1d2b]"
         >
           {{ link.label }}
         </RouterLink>
@@ -43,10 +43,10 @@ const links = [
       />
     </main>
 
-    <footer class="bg-black px-6 py-12 text-white sm:px-10 lg:px-12 lg:py-16">
+    <footer class="bg-[#fcda4b] px-6 py-12 text-[#eb1d2b] sm:px-10 lg:px-12 lg:py-16">
       <div class="grid gap-10 md:grid-cols-2">
         <div class="space-y-4">
-          <p class="text-sm uppercase tracking-[0.2em] text-white/60">Contacto</p>
+          <p class="text-sm uppercase tracking-[0.2em] text-[#eb1d2b]/60">Contacto</p>
           <!-- <h2 class="text-3xl uppercase leading-none sm:text-4xl">
             Informacion del festival
           </h2> -->
