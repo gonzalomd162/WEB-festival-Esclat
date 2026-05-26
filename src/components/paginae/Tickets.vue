@@ -37,14 +37,14 @@ const ticketsDia = [
 </script>
 
 <template>
-  <main class="bg-[#fcda4b] text-[#E5001A] font-sans selection:bg-[#E5001A] selection:text-[#fcda4b] relative p-6 md:p-12 overflow-hidden min-h-screen">
+  <main class="bg-[#fcda4b] text-[#eb1d2b] font-sans selection:bg-[#eb1d2b] selection:text-[#fcda4b] relative p-6 md:p-12 overflow-hidden min-h-screen">
     <!-- RATILLA de Fondo (Repocisionada a la izquierda y más grande) -->
     
 
     <div class="relative z-10 max-w-[1600px] mx-auto">
       
       <!-- HEADER SECCIÓN -->
-      <div class="border-b-4 border-[#E5001A] mb-12 flex justify-between items-end pb-4">
+      <div class="border-b-4 border-[#eb1d2b] mb-12 flex justify-between items-end pb-4">
         <h2 class="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] italic">Tickets</h2>
         <RouterLink to="/" class="flex flex-col items-end group transition-transform hover:scale-105 active:scale-95">
           <span class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-0 group-hover:opacity-100 transition-opacity">Volver a Inicio</span>
@@ -60,9 +60,9 @@ const ticketsDia = [
         
         <!-- COLUMNA IZQUIERDA: ENTRADAS POR DÍAS -->
         <section class="lg:col-span-8 flex flex-col">
-          <div class="border-t-2 border-[#E5001A]">
+          <div>
             <div v-for="ticket in ticketsDia" :key="ticket.id" 
-              class="grid grid-cols-1 md:grid-cols-[180px_1fr_150px] gap-4 md:gap-8 border-b-2 border-[#E5001A] py-10 group transition-all duration-300 hover:bg-[#E5001A] hover:text-[#fcda4b]">
+              class="grid grid-cols-1 md:grid-cols-[180px_1fr_150px] gap-4 md:gap-8 py-10 group transition-all duration-300 hover:bg-[#eb1d2b] hover:text-[#fcda4b]">
               
               <!-- Col 1: Fecha -->
               <div class="flex flex-col">
@@ -113,7 +113,7 @@ const ticketsDia = [
         <section class="lg:col-span-4 flex flex-col space-y-12">
           
           <!-- Card Abono -->
-          <div class="border-[6px] border-[#E5001A] p-8 flex flex-col justify-between min-h-[500px] relative overflow-hidden bg-[#E5001A] text-[#fcda4b]">
+          <div class="border-[6px] border-[#eb1d2b] p-8 flex flex-col justify-between min-h-[500px] relative overflow-hidden bg-[#eb1d2b] text-[#fcda4b]">
             <div class="relative z-10">
               <div class="flex justify-between items-start mb-10">
                 <h3 class="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-[0.8] italic">
@@ -143,7 +143,7 @@ const ticketsDia = [
                 <span class="text-xl font-bold uppercase">IVA inc.</span>
               </div>
               <button 
-                class="font-hover-alt w-full py-5 text-3xl font-black uppercase bg-[#fcda4b] text-[#E5001A] hover:bg-transparent hover:text-[#fcda4b] transition-all duration-200"
+                class="font-hover-alt w-full py-5 text-3xl font-black uppercase bg-[#fcda4b] text-[#eb1d2b] hover:bg-transparent hover:text-[#fcda4b] transition-all duration-200"
               >
                 Comprar Abono
               </button>
@@ -151,7 +151,7 @@ const ticketsDia = [
           </div>
 
           <!-- INFO UBICACIÓN / DATOS TÉCNICOS -->
-          <div class="space-y-8 bg-[#E5001A]/5 p-6 border-l-8 border-[#E5001A]">
+          <div class="space-y-8 bg-[#eb1d2b]/5 p-6 border-l-8 border-[#eb1d2b]">
             <div>
               <span class="text-xs font-bold uppercase block mb-2 tracking-[0.2em] opacity-70">Ubicació Principal</span>
               <span class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.85] block">
@@ -159,7 +159,7 @@ const ticketsDia = [
               </span>
             </div>
             
-            <div class="grid grid-cols-2 border-t-2 border-[#E5001A] pt-6 gap-6">
+            <div class="grid grid-cols-2 border-t-2 border-[#eb1d2b] pt-6 gap-6">
               <div>
                 <span class="text-[10px] font-bold uppercase block opacity-60">Obertura Portes</span>
                 <span class="text-xl font-black uppercase">16:00H</span>
@@ -170,7 +170,7 @@ const ticketsDia = [
               </div>
             </div>
 
-            <div class="pt-4 border-t border-[#E5001A]/20">
+            <div class="pt-4 border-t border-[#eb1d2b]/20">
               <p class="text-xs font-bold uppercase leading-tight">
                 * Aforament limitat. Es recomana la compra anticipada per evitar cues. L'organització se reserva el dret d'admissió.
               </p>
