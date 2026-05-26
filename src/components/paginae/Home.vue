@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import posterIllustration from "@/assets/img/rana-gonzalo-roja.png";
+const posterIllustration = "/imagines/Esclat/pez rojo.png";
 
 const links = [
   { label: "Tickets", to: "/entradas" },
@@ -14,10 +14,14 @@ const links = [
     <main
       class="relative flex min-h-dvh flex-col overflow-hidden bg-[#fcda4b] px-6 py-8 text-[#eb1d2b] sm:px-10 sm:py-12 lg:px-12 lg:py-14"
     >
-    <img 
-    class="flex w-200 h-auto"
-    src="/imagines/Esclat/Artboard 2-8.png" 
-    alt="">
+      <div class="relative z-10">
+        <img 
+          class="w-full max-w-[400px] sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px] h-auto"
+          src="/imagines/Esclat/Artboard 2-8.png" 
+          alt="Esclat Logo"
+        >
+      </div>
+
       <nav
         aria-label="Navegacion principal"
         class="relative z-20 mt-auto flex flex-col items-start gap-4 pb-6 sm:gap-5 sm:pb-8 lg:pb-10"
@@ -35,7 +39,7 @@ const links = [
       <img
         :src="posterIllustration"
         alt=""
-        class="pointer-events-none absolute bottom-0 right-0 z-0 w-[92vw] max-w-none translate-x-[10%] translate-y-[1%] select-none object-contain sm:w-[76vw] md:w-[70vw] lg:w-[68vw] xl:w-[66vw]"
+        class="pointer-events-none absolute bottom-0 right-0 z-0 w-[70vw] max-w-none translate-x-[10%] translate-y-[5%] select-none object-contain sm:w-[60vw] md:w-[55vw] lg:w-[50vw] xl:w-[45vw]"
       />
     </main>
 
