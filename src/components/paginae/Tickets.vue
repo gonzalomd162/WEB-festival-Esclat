@@ -145,11 +145,7 @@ const ticketsDia = [
               <button 
                 class="font-hover-alt w-full py-5 text-3xl font-black uppercase bg-[#fcda4b] text-[#eb1d2b] hover:bg-transparent hover:text-[#fcda4b] transition-all duration-200"
               >
-<<<<<<< HEAD
                 Comprar Abonament
-=======
-                Comprar Abono
->>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
               </button>
             </div>
           </div>
