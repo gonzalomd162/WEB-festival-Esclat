@@ -9,7 +9,11 @@ const sales = [
   "Hall La Polivalent",
   "Factoría",
   "Visual Room",
+<<<<<<< HEAD
   "Sala de Exposicions",
+=======
+  "Sala de Exposiciones",
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
   "Patio 1",
   "Patio 2"
 ];
@@ -17,6 +21,7 @@ const sales = [
 const transportes = [
   {
     tipo: "Metro",
+<<<<<<< HEAD
     detalles: "Línea 10. Parada recomanada: “Ciutat Arts i Ciències – Justícia”. Aproximadament 10-15 min caminant."
   },
   {
@@ -30,13 +35,32 @@ const transportes = [
   {
     tipo: "Cotxe",
     detalles: "Accés des de l'Avinguda del Port. Connexió ràpida amb V-21 i ronda nord/sur."
+=======
+    detalles: "Línea 10. Parada recomendada: “Ciutat Arts i Ciències – Justícia”. Aproximadamente 10-15 min andando."
+  },
+  {
+    tipo: "Autobús EMT",
+    detalles: "Líneas útiles: 4, 19, 30, 92, 95. (Revisar paradas cercanas según entrada)."
+  },
+  {
+    tipo: "Bicicleta",
+    detalles: "Aparcabicis cercanos y estaciones Valenbisi alrededor de la Marina y Ciudad de las Artes."
+  },
+  {
+    tipo: "Coche",
+    detalles: "Acceso desde Avenida del Puerto. Conexión rápida con V-21 y ronda norte/sur."
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
   }
 ];
 
 const parkings = [
   "Parking de la Marina",
   "Parking Umbracle",
+<<<<<<< HEAD
   "Parkings de la zona port/Ciudad de las Artes"
+=======
+  "Parkings de la zona puerto/Ciudad de las Artes"
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
 ];
 </script>
 
@@ -65,7 +89,11 @@ const parkings = [
           
           <!-- DIRECCIÓN -->
           <div class="border-l-8 border-[#eb1d2b] pl-6 py-2">
+<<<<<<< HEAD
             <span class="text-xs font-bold uppercase block mb-2 tracking-[0.2em] opacity-70">Direcció</span>
+=======
+            <span class="text-xs font-bold uppercase block mb-2 tracking-[0.2em] opacity-70">Dirección</span>
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
             <h3 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-[0.9]">
               C/ Joan Verdeguer, 16 <br>
               46024 València, España
@@ -74,7 +102,11 @@ const parkings = [
 
           <!-- CÓMO LLEGAR -->
           <div class="space-y-8">
+<<<<<<< HEAD
             <h4 class="text-3xl md:text-5xl font-black uppercase italic pb-2">Com arribar</h4>
+=======
+            <h4 class="text-3xl md:text-5xl font-black uppercase italic pb-2">Cómo llegar</h4>
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div v-for="transporte in transportes" :key="transporte.tipo" class="space-y-2">
@@ -86,7 +118,11 @@ const parkings = [
 
           <!-- PARKING -->
           <div class="bg-[#eb1d2b] text-[#fcda4b] p-8 border-[6px] border-[#eb1d2b]">
+<<<<<<< HEAD
             <h4 class="text-3xl md:text-4xl font-black uppercase italic mb-6">Parking recomanat</h4>
+=======
+            <h4 class="text-3xl md:text-4xl font-black uppercase italic mb-6">Parking Recomendado</h4>
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
             <ul class="space-y-4">
               <li v-for="parking in parkings" :key="parking" class="flex items-center gap-3 text-sm md:text-base font-bold uppercase tracking-tight">
                 <span class="w-4 h-4 bg-[#fcda4b] shrink-0"></span>
@@ -97,6 +133,7 @@ const parkings = [
 
           <!-- ACCESIBILIDAD -->
           <div class="space-y-6 bg-[#eb1d2b]/10 p-6 border-l-8 border-[#eb1d2b]">
+<<<<<<< HEAD
             <h4 class="text-2xl md:text-3xl font-black uppercase italic">Accesibilitat</h4>
             <ul class="space-y-3 text-xs md:text-sm font-bold uppercase leading-tight">
               <li class="flex items-start gap-2">
@@ -114,6 +151,25 @@ const parkings = [
               <li class="flex items-start gap-2">
                 <span class="mt-1">/</span>
                 Banys accesibles distribuïts per les naus.
+=======
+            <h4 class="text-2xl md:text-3xl font-black uppercase italic">Accesibilidad</h4>
+            <ul class="space-y-3 text-xs md:text-sm font-bold uppercase leading-tight">
+              <li class="flex items-start gap-2">
+                <span class="mt-1">/</span>
+                Acceso PMR en todo el recinto.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">/</span>
+                Entradas adaptadas y señalizadas.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">/</span>
+                Información sobre movilidad reducida disponible en el punto de info.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1">/</span>
+                Aseos accesibles distribuidos por las naves.
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
               </li>
             </ul>
           </div>

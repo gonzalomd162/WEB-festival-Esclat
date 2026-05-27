@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script setup lang="ts">
 const highlights = [
   {
@@ -157,4 +158,8 @@ const experience = [
       </div>
     </div>
   </main>
+=======
+<template>
+  <main class="min-h-dvh bg-white" />
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
 </template>
