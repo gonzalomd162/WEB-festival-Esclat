@@ -76,10 +76,6 @@ const lineup = {
           </p>
         </section>
 
-        <div class="w-72 h-72 md:w-[30rem] md:h-[30rem] my-12">
-            <img src="/imagines/Esclat/RATILLA.png" alt="" class="w-full h-full object-contain">
-        </div>
-
         <!-- ACTIVIDADES -->
         <section class="w-full py-8">
           <div class="space-y-6">
@@ -89,6 +85,10 @@ const lineup = {
             </p>
           </div>
         </section>
+
+        <div class="w-72 h-72 md:w-[30rem] md:h-[30rem] my-12">
+            <img src="/imagines/Esclat/RATILLA.png" alt="" class="w-full h-full object-contain">
+        </div>
 
       </div>
 
