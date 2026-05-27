@@ -24,13 +24,21 @@ const links = [
 
       <nav
         aria-label="Navegacion principal"
+<<<<<<< HEAD
         class="relative z-20 mt-auto flex flex-col items-start gap-1 pb-6 sm:gap-2 sm:pb-8 lg:gap-2 lg:pb-10"
+=======
+        class="relative z-20 mt-auto flex flex-col items-start gap-4 pb-6 sm:gap-5 sm:pb-8 lg:pb-10"
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
       >
         <RouterLink
           v-for="link in links"
           :key="link.to"
           :to="link.to"
+<<<<<<< HEAD
           class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal hover:font-bold hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#eb1d2b]"
+=======
+          class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-normal leading-none tracking-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#eb1d2b]"
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
         >
           {{ link.label }}
         </RouterLink>
@@ -39,7 +47,11 @@ const links = [
       <img
         :src="posterIllustration"
         alt=""
+<<<<<<< HEAD
         class="pointer-events-none absolute bottom-0 right-[8vw] z-0 w-[96vw] max-w-none translate-x-[10%] translate-y-[5%] -scale-x-100 select-none object-contain sm:w-[84vw] md:w-[76vw] lg:w-[68vw] xl:w-[62vw]"
+=======
+        class="pointer-events-none absolute bottom-0 right-0 z-0 w-[70vw] max-w-none translate-x-[10%] translate-y-[5%] select-none object-contain sm:w-[60vw] md:w-[55vw] lg:w-[50vw] xl:w-[45vw]"
+>>>>>>> 29116c15ba530e39e1f9afde6c441f9d5e4f257f
       />
     </main>
 
