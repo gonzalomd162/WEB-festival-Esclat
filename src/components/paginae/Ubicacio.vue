@@ -44,12 +44,12 @@ const parkings = [
     <div class="relative z-10 mx-auto max-w-[1600px]">
       <div class="mb-12 flex items-end justify-between border-b-4 border-[#eb1d2b] pb-4">
         <h2 class="text-6xl font-black uppercase italic leading-[0.8] tracking-tighter md:text-9xl">
-          Ubicacio
+          Ubicació
         </h2>
 
         <RouterLink to="/" class="group flex flex-col items-end transition-transform hover:scale-105 active:scale-95">
           <span class="mb-1 text-[10px] font-black uppercase tracking-widest opacity-0 transition-opacity group-hover:opacity-100">
-            Volver a Inicio
+            Tornar a inici
           </span>
           <img
             src="/imagines/Esclat/Artboard 2_1-8.png"
@@ -63,17 +63,17 @@ const parkings = [
         <section class="space-y-12 lg:col-span-6">
           <div class="border-l-8 border-[#eb1d2b] py-2 pl-6">
             <span class="mb-2 block text-xs font-bold uppercase tracking-[0.2em] opacity-70">
-              Direccion
+              Direcció
             </span>
             <h3 class="text-4xl font-black uppercase leading-[0.9] tracking-tighter md:text-6xl">
               C/ Joan Verdeguer, 16 <br>
-              46024 Valencia, Espana
+              46024 València, Espanya
             </h3>
           </div>
 
           <div class="space-y-8">
             <h4 class="pb-2 text-3xl font-black uppercase italic md:text-5xl">
-              Como llegar
+              Com arribar
             </h4>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -88,7 +88,7 @@ const parkings = [
 
           <div class="border-[6px] border-[#eb1d2b] bg-[#eb1d2b] p-8 text-[#fcda4b]">
             <h4 class="mb-6 text-3xl font-black uppercase italic md:text-4xl">
-              Parking recomendado
+              Parking recomanat
             </h4>
             <ul class="space-y-4">
               <li
@@ -104,24 +104,24 @@ const parkings = [
 
           <div class="space-y-6 border-l-8 border-[#eb1d2b] bg-[#eb1d2b]/10 p-6">
             <h4 class="text-2xl font-black uppercase italic md:text-3xl">
-              Accesibilidad
+              Accesibilitat
             </h4>
             <ul class="space-y-3 text-xs font-bold uppercase leading-tight md:text-sm">
               <li class="flex items-start gap-2">
                 <span class="mt-1">/</span>
-                Acceso PMR en todo el recinto.
+                Accés PMR en tot el recinte.
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1">/</span>
-                Entradas adaptadas y senalizadas.
+                Entrades adaptades i senyalitzades.
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1">/</span>
-                Informacion sobre movilidad reducida disponible en el punto de info.
+                Informació sobre movilitat reduïda disponible en el punt de info.
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1">/</span>
-                Aseos accesibles distribuidos por las naves.
+                Banys accesibles distribuïts per les naus.
               </li>
             </ul>
           </div>
@@ -155,7 +155,7 @@ const parkings = [
 
       <div class="mt-24 flex items-center justify-between border-t-4 border-[#eb1d2b] pt-8">
         <p class="text-xs font-bold uppercase tracking-widest">
-          Esclat Festival 2026 - Valencia
+          Esclat Festival 2026 - València
         </p>
       </div>
     </div>
