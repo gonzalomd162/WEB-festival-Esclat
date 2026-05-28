@@ -129,8 +129,8 @@ const ticketsDia: TicketDia[] = [
 
             <div class="relative z-10 mt-12 flex flex-col items-start gap-4 border-t-2 border-[#fcda4b]/30 pt-8">
               <div class="flex items-baseline gap-2">
-                <span class="text-8xl font-black leading-none tracking-tighter md:text-9xl">75€</span>
-                <span class="text-xl font-bold uppercase">IVA inc.</span>
+                <span class="text-8xl font-black leading-none tracking-tighter md:text-9xl">FREE</span>
+                <span class="text-xl font-bold uppercase"></span>
               </div>
               <button
                 class="font-hover-alt w-full bg-[#fcda4b] py-5 text-3xl font-black uppercase text-[#eb1d2b] transition-all duration-200 hover:bg-transparent hover:text-[#fcda4b]"
