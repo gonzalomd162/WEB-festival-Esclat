@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ArrowDown, ArrowUp } from "lucide-vue-next";
 import { computed, nextTick, ref } from "vue";
 
 const videos = [
@@ -123,10 +122,15 @@ const scrollToVideos = () => {
       <button
         type="button"
         aria-label="Bajar a los videos"
-        class="absolute bottom-6 left-1/2 z-30 flex h-14 w-14 -translate-x-1/2 items-center justify-center bg-transparent text-[#eb1d2b] transition-transform hover:translate-y-1 hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#eb1d2b] sm:bottom-8"
+        class="absolute bottom-2 left-1/2 z-30 flex h-16 w-16 -translate-x-1/2 items-center justify-center bg-transparent p-0 transition-transform hover:translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#eb1d2b] sm:bottom-3 sm:h-20 sm:w-20"
         @click="scrollToVideos"
       >
-        <ArrowDown class="h-12 w-12 stroke-[3]" aria-hidden="true" />
+        <img
+          src="/imagines/Esclat/ROJA.png"
+          alt=""
+          class="h-full w-full object-contain"
+          aria-hidden="true"
+        >
       </button>
     </main>
 
@@ -152,10 +156,15 @@ const scrollToVideos = () => {
       <button
         type="button"
         aria-label="Subir al inicio"
-        class="absolute left-1/2 top-6 z-30 flex h-14 w-14 -translate-x-1/2 items-center justify-center bg-transparent text-[#fcda4b] transition-transform hover:-translate-y-1 hover:text-[#eb1d2b] hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:top-8"
+        class="absolute left-1/2 top-6 z-30 flex h-16 w-16 -translate-x-1/2 items-center justify-center bg-transparent p-0 transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:top-8 sm:h-20 sm:w-20"
         @click="scrollToHome"
       >
-        <ArrowUp class="h-12 w-12 stroke-[3]" aria-hidden="true" />
+        <img
+          src="/imagines/Esclat/AMARILLA.png"
+          alt=""
+          class="h-full w-full object-contain"
+          aria-hidden="true"
+        >
       </button>
 
       <div class="relative z-20 mt-auto flex justify-end pb-6 sm:pb-8 lg:pb-10">
