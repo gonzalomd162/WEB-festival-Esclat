@@ -3,18 +3,18 @@ const lineup = {
   principales:
     "Wilco - Los Planetas - Carolina Durante - Manel - The Divine Comedy - Hoke",
   secundarios:
-    "Adam Green - Alcala Norte - Eels - El Mato a un Policia Motorizado - La Bien Querida - Ill Pekeno y Ergo Pro",
+    "Adam Green - Alcala Norte - Eels - El Mato a un Policia Motorizado - La Bien Querida - Ill Pekeño y Ergo Pro",
   terciarios: [
     "Boletus - Eldiablo de Shanghai - Nepal Nepal - L`haine",
     "Rita Payes - Els Amics de les Arts - I'm From Barcelona",
     "Nico Miseria - Maria Arnal",
   ],
   cuaternarios: [
-    "La buena Vida - Platz - Mala Gestion",
+    "La buena Vida - Platz - Mala Gestión",
     "Diego 900 - Luna",
   ],
   activitats: [
-    "Taller d'escultura musical - Elaboracion d'instruments inusuals",
+    "Taller d'escultura musical - Elaboración d'instruments inusuals",
     "Conferencia de idees absurdes - Creacion de fanzines express",
     "Customitzacio de samarretes - Laboratori de samples",
     "...i molt mes...",
