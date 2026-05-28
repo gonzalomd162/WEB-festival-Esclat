@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const lineup = {
   principales:
-    "Wilco - Los Planetas - Carolina Durante - Manel - The Divine Comedy - Hoke",
+    " Teo Negrata - Wilco - Los Planetas - Carolina Durante - Manel - The Divine Comedy - Hoke",
   secundarios:
     "Adam Green - Alcala Norte - Eels - El Mato a un Policia Motorizado - La Bien Querida - Ill Pekeño y Ergo Pro",
   terciarios: [
