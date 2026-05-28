@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import { ArrowDown, ArrowUp } from "lucide-vue-next";
 import { computed, nextTick, ref } from "vue";
 
 const videos = [
-  { src: "/videos/NICO.mp4", artist: "NICO MISERIA" },
-  { src: "/videos/LOSPLANETAS.mp4", artist: "LOS PLANETAS" },
+  { src: "/videos/MISERIA.mp4", artist: "NICO MISERIA" },
+  { src: "/videos/PLANETAS.mp4", artist: "LOS PLANETAS" },
   { src: "/videos/GREEN.mp4", artist: "ADAM GREEN" },
   { src: "/videos/EMPM.mp4", artist: "EL MATÓ A UN POLICÍA MOTORIZADO" },
   { src: "/videos/PEKEERGO.mp4", artist: "ILL PEKEÑO Y ERGO PRO" },
   { src: "/videos/TDIVINEC.mp4", artist: "THE DIVINE COMEDY" },
+  { src: "/videos/HOKE.mp4", artist: "HOKE" },
+  { src: "/videos/RITA.mp4", artist: "RITA PAYÉS" },
+  { src: "/videos/EELS.mp4", artist: "EELS" },
+  { src: "/videos/CAROLINA.mp4", artist: "CAROLINA DURANTE" },
+  { src: "/videos/MALAGESTION.mp4", artist: "MALA GESTIÓN" },
+  { src: "/videos/MANEL.mp4", artist: "MANEL" },
 ] as const;
 
 type VideoItem = (typeof videos)[number];
@@ -21,22 +28,39 @@ const links = [
 
 const currentVideoIndex = ref(0);
 const backgroundVideo = ref<HTMLVideoElement | null>(null);
+const homeSection = ref<HTMLElement | null>(null);
+const videoSection = ref<HTMLElement | null>(null);
 const isSwitchingVideo = ref(false);
 const currentVideo = computed<VideoItem>(
   () => videos[currentVideoIndex.value] ?? videos[0],
 );
-const isDivineComedyVideo = computed(
-  () => currentVideo.value.src === "/videos/TDIVINEC.mp4",
-);
+const currentVideoScale = computed(() => {
+  switch (currentVideo.value.src) {
+    case "/videos/MALAGESTION.mp4":
+      return "scale-[1.38]";
+    case "/videos/EELS.mp4":
+      return "scale-[1.22]";
+    case "/videos/RITA.mp4":
+      return "scale-[1.2]";
+    case "/videos/TDIVINEC.mp4":
+      return "scale-[1.18]";
+    default:
+      return "scale-100";
+  }
+});
 
-const showNextVideo = async () => {
+const selectVideo = async (index: number) => {
   if (isSwitchingVideo.value) return;
 
   isSwitchingVideo.value = true;
-  currentVideoIndex.value = (currentVideoIndex.value + 1) % videos.length;
+  currentVideoIndex.value = index;
   await nextTick();
   await backgroundVideo.value?.play().catch(() => undefined);
   isSwitchingVideo.value = false;
+};
+
+const showNextVideo = async () => {
+  await selectVideo((currentVideoIndex.value + 1) % videos.length);
 };
 
 const handleVideoProgress = () => {
@@ -50,27 +74,27 @@ const handleVideoProgress = () => {
     void showNextVideo();
   }
 };
+
+const scrollToHome = () => {
+  homeSection.value?.scrollIntoView({ behavior: "smooth" });
+};
+
+const scrollToVideos = () => {
+  videoSection.value?.scrollIntoView({ behavior: "smooth" });
+};
 </script>
 
 <template>
-  <div>
+  <div class="bg-[#fcda4b] text-[#eb1d2b]">
     <main
-      class="relative flex min-h-dvh flex-col overflow-hidden bg-black px-6 py-8 text-[#eb1d2b] sm:px-10 sm:py-12 lg:px-12 lg:py-14"
+      ref="homeSection"
+      class="relative flex min-h-dvh flex-col overflow-hidden bg-[#fcda4b] px-6 py-8 text-[#eb1d2b] sm:px-10 sm:py-12 lg:px-12 lg:py-14"
     >
-      <video
-        ref="backgroundVideo"
-        :key="currentVideo.src"
-        class="absolute inset-0 z-0 h-full w-full object-cover transition-transform duration-300"
-        :class="isDivineComedyVideo ? 'scale-[1.18]' : 'scale-100'"
-        :src="currentVideo.src"
-        autoplay
-        muted
-        playsinline
-        aria-hidden="true"
-        @click="showNextVideo"
-        @ended="showNextVideo"
-        @timeupdate="handleVideoProgress"
-      ></video>
+      <img
+        src="/imagines/Esclat/RATILLA.png"
+        alt=""
+        class="pointer-events-none absolute right-[-34vw] top-1/2 z-0 h-[min(95dvh,52rem)] max-w-none -translate-y-1/2 scale-x-[-1] object-contain sm:right-[-20vw] sm:h-[min(100dvh,70rem)] lg:right-[-2vw] lg:h-[108dvh]"
+      >
 
       <div class="relative z-10">
         <img
@@ -89,19 +113,70 @@ const handleVideoProgress = () => {
             v-for="link in links"
             :key="link.to"
             :to="link.to"
-            class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal hover:font-bold hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#eb1d2b]"
+            class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal text-[#eb1d2b] hover:font-bold hover:text-[#eb1d2b] hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#eb1d2b]"
           >
             {{ link.label }}
           </RouterLink>
         </nav>
-
-        <p class="font-hover-alt pointer-events-none max-w-[50vw] text-right text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal md:max-w-[44rem]">
-          {{ currentVideo.artist }}
-        </p>
       </div>
+
+      <button
+        type="button"
+        aria-label="Bajar a los videos"
+        class="absolute bottom-6 left-1/2 z-30 flex h-14 w-14 -translate-x-1/2 items-center justify-center bg-transparent text-[#eb1d2b] transition-transform hover:translate-y-1 hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#eb1d2b] sm:bottom-8"
+        @click="scrollToVideos"
+      >
+        <ArrowDown class="h-12 w-12 stroke-[3]" aria-hidden="true" />
+      </button>
     </main>
 
-    <footer class="bg-[#eb1d2b] px-6 py-12 text-[#fcda4b] sm:px-10 lg:px-12 lg:py-16">
+    <section
+      ref="videoSection"
+      class="relative flex min-h-dvh flex-col overflow-hidden bg-black px-6 py-8 text-[#fcda4b] sm:px-10 sm:py-12 lg:px-12 lg:py-14"
+    >
+      <video
+        ref="backgroundVideo"
+        :key="currentVideo.src"
+        class="absolute inset-0 z-0 h-full w-full bg-black object-cover transition-transform duration-300"
+        :class="currentVideoScale"
+        :src="currentVideo.src"
+        autoplay
+        muted
+        playsinline
+        aria-hidden="true"
+        @click="showNextVideo"
+        @ended="showNextVideo"
+        @timeupdate="handleVideoProgress"
+      ></video>
+
+      <button
+        type="button"
+        aria-label="Subir al inicio"
+        class="absolute left-1/2 top-6 z-30 flex h-14 w-14 -translate-x-1/2 items-center justify-center bg-transparent text-[#fcda4b] transition-transform hover:-translate-y-1 hover:text-[#eb1d2b] hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:top-8"
+        @click="scrollToHome"
+      >
+        <ArrowUp class="h-12 w-12 stroke-[3]" aria-hidden="true" />
+      </button>
+
+      <div class="relative z-20 mt-auto flex justify-end pb-6 sm:pb-8 lg:pb-10">
+        <nav
+          aria-label="Seleccion de video por artista"
+          class="flex w-full max-w-[42rem] flex-col items-end gap-1 text-right sm:max-w-[48rem]"
+        >
+          <button
+            v-for="(video, idx) in videos"
+            :key="video.src"
+            type="button"
+            class="font-hover-alt max-w-full bg-transparent p-0 text-right text-[clamp(1.35rem,3vw,2.8rem)] font-bold uppercase leading-none tracking-normal text-[#fcda4b] transition-colors duration-200 hover:text-[#eb1d2b] hover:italic focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b]"
+            @click="selectVideo(idx)"
+          >
+            {{ video.artist }}
+          </button>
+        </nav>
+      </div>
+    </section>
+
+    <footer class="bg-[#fcda4b] px-6 py-12 text-[#eb1d2b] sm:px-10 lg:px-12 lg:py-16">
       <div class="grid gap-10 md:grid-cols-2">
         <div class="space-y-4">
           <p class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal">
