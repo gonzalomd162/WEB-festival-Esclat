@@ -5,7 +5,7 @@ const lineup = {
   secundarios:
     "Adam Green - Alcala Norte - Eels - El Mato a un Policia Motorizado - La Bien Querida - Ill Pekeño y Ergo Pro",
   terciarios: [
-    "Boletus - Eldiablo de Shanghai - Nepal Nepal - L`haine",
+    "Boletus - El diablo de Shanghai - Nepal Nepal - L`haine",
     "Rita Payes - Els Amics de les Arts - I'm From Barcelona",
     "Nico Miseria - Maria Arnal",
   ],
@@ -97,22 +97,26 @@ const botonArtistaClase =
             <p
               v-for="(linea, idx) in lineup.activitats"
               :key="idx"
-              class="text-xl font-black uppercase italic leading-none md:text-3xl lg:text-4xl"
+              class="text-xl font-black uppercase leading-none md:text-3xl lg:text-4xl"
             >
               {{ linea }}
             </p>
           </div>
         </section>
-
-        <div class="-mt-16 mb-2 h-[32rem] w-[32rem] max-w-full md:-mt-28 md:h-[64rem] md:w-[64rem]">
-          <img
-            src="/imagines/Esclat/RATILLA.png"
-            alt=""
-            class="h-full w-full object-contain"
-          >
-        </div>
       </div>
     </div>
+
+    <!-- Elementos decorativos -->
+    <img 
+      src="/imagines/Esclat/silla.png" 
+      alt="" 
+      class="absolute bottom-4 left-4 lg:top-1/2 lg:bottom-auto lg:left-10 z-0 w-32 md:w-64 lg:w-96 pointer-events-none opacity-90 lg:-translate-y-1/2"
+    >
+    <img 
+      src="/imagines/Esclat/flores.png" 
+      alt="" 
+      class="absolute bottom-4 right-4 lg:top-1/2 lg:bottom-auto lg:right-10 z-0 w-40 md:w-80 lg:w-[400px] pointer-events-none opacity-90 lg:-translate-y-1/2"
+    >
   </main>
 </template>
 

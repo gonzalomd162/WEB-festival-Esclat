@@ -59,92 +59,107 @@ const parkings = [
         </RouterLink>
       </div>
 
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
-        <section class="space-y-12 lg:col-span-6">
-          <div class="border-l-8 border-[#eb1d2b] py-2 pl-6">
-            <span class="mb-2 block text-xs font-bold uppercase tracking-[0.2em] opacity-70">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
+        <section class="space-y-16 lg:col-span-7">
+          <div class="border-l-[12px] border-[#eb1d2b] py-4 pl-10">
+            <span class="mb-4 block text-sm font-black uppercase tracking-[0.2em] opacity-70">
               Direcció
             </span>
-            <h3 class="text-4xl font-black uppercase leading-[0.9] tracking-tighter md:text-6xl">
+            <h3 class="text-5xl font-black uppercase leading-[0.85] tracking-tighter md:text-8xl">
               C/ Joan Verdeguer, 16 <br>
               46024 València, Espanya
             </h3>
           </div>
 
-          <div class="space-y-8">
-            <h4 class="pb-2 text-3xl font-black uppercase italic md:text-5xl">
+          <div class="flex flex-wrap gap-12 border-l-[12px] border-[#eb1d2b] py-4 pl-10">
+            <div>
+              <span class="mb-4 block text-sm font-black tracking-[0.2em] opacity-70">
+                Obertura
+              </span>
+              <p class="text-5xl font-black md:text-8xl leading-none">16:00H</p>
+            </div>
+            <div>
+              <span class="mb-4 block text-sm font-black tracking-[0.2em] opacity-70">
+                Tancament
+              </span>
+              <p class="text-5xl font-black md:text-8xl leading-none">03:30H</p>
+            </div>
+          </div>
+
+          <div class="space-y-10">
+            <h4 class="pb-4 text-4xl font-black uppercase italic md:text-7xl">
               Com arribar
             </h4>
 
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-              <div v-for="transporte in transportes" :key="transporte.tipo" class="space-y-2">
-                <span class="text-xl font-black uppercase">{{ transporte.tipo }}</span>
-                <p class="text-sm font-bold uppercase leading-tight opacity-90">
+            <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
+              <div v-for="transporte in transportes" :key="transporte.tipo" class="space-y-3">
+                <span class="text-2xl font-black uppercase md:text-4xl">{{ transporte.tipo }}</span>
+                <p class="text-base font-bold uppercase leading-tight opacity-90 md:text-xl">
                   {{ transporte.detalles }}
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="border-[6px] border-[#eb1d2b] bg-[#eb1d2b] p-8 text-[#fcda4b]">
-            <h4 class="mb-6 text-3xl font-black uppercase italic md:text-4xl">
+          <div class="border-[8px] border-[#eb1d2b] bg-[#eb1d2b] p-10 text-[#fcda4b]">
+            <h4 class="mb-8 text-4xl font-black uppercase italic md:text-5xl">
               Parking recomanat
             </h4>
-            <ul class="space-y-4">
+            <ul class="space-y-6">
               <li
                 v-for="parking in parkings"
                 :key="parking"
-                class="flex items-center gap-3 text-sm font-bold uppercase tracking-tight md:text-base"
+                class="flex items-center gap-4 text-lg font-bold uppercase tracking-tight md:text-2xl"
               >
-                <span class="h-4 w-4 shrink-0 bg-[#fcda4b]"></span>
+                <span class="h-6 w-6 shrink-0 bg-[#fcda4b]"></span>
                 {{ parking }}
               </li>
             </ul>
           </div>
 
-          <div class="space-y-6 border-l-8 border-[#eb1d2b] bg-[#eb1d2b]/10 p-6">
-            <h4 class="text-2xl font-black uppercase italic md:text-3xl">
+          <div class="space-y-8 border-l-[12px] border-[#eb1d2b] bg-[#eb1d2b]/10 p-10">
+            <h4 class="text-3xl font-black uppercase italic md:text-5xl">
               Accesibilitat
             </h4>
-            <ul class="space-y-3 text-xs font-bold uppercase leading-tight md:text-sm">
-              <li class="flex items-start gap-2">
-                <span class="mt-1">/</span>
+            <ul class="space-y-4 text-sm font-bold uppercase leading-tight md:text-xl">
+              <li class="flex items-start gap-3">
+                <span class="mt-1 font-black">/</span>
                 Accés PMR en tot el recinte.
               </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1">/</span>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 font-black">/</span>
                 Entrades adaptades i senyalitzades.
               </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1">/</span>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 font-black">/</span>
                 Informació sobre movilitat reduïda disponible en el punt de info.
               </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1">/</span>
+              <li class="flex items-start gap-3">
+                <span class="mt-1 font-black">/</span>
                 Banys accesibles distribuïts per les naus.
               </li>
             </ul>
           </div>
         </section>
 
-        <section class="space-y-12 lg:col-span-6">
+        <section class="space-y-20 lg:col-span-5">
           <div class="w-full">
             <img
               src="/imagines/Esclat/mapa.png"
               alt="Ilustracion del mapa del recinto"
-              class="h-auto w-full origin-top scale-110 object-contain lg:scale-125"
+              class="h-auto w-full origin-top scale-110 object-contain lg:scale-150"
             >
           </div>
 
-          <div class="pt-24">
-            <h4 class="mb-8 text-3xl font-black uppercase italic md:text-5xl">
+          <div class="pt-32">
+            <h4 class="mb-10 text-4xl font-black uppercase italic md:text-6xl">
               Sales Disponibles
             </h4>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div
                 v-for="sala in sales"
                 :key="sala"
-                class="cursor-default border-2 border-[#eb1d2b] p-4 text-xl font-black uppercase transition-colors hover:bg-[#eb1d2b] hover:text-[#fcda4b]"
+                class="cursor-default border-4 border-[#eb1d2b] p-6 text-2xl font-black uppercase transition-colors hover:bg-[#eb1d2b] hover:text-[#fcda4b] md:text-3xl"
               >
                 {{ sala }}
               </div>
