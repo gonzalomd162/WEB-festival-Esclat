@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 type TicketDia = {
   fecha: string;
   mes: string;
@@ -9,6 +11,20 @@ type TicketDia = {
   terciarios: string[];
   cuaternarios?: string[];
 };
+
+const horarioFestival = {
+  apertura: "16:00",
+  cierre: "03:30",
+};
+
+const datosImportantes = [
+  "Recinte principal: Les Naus, C/ Joan Verdeguer, 16, 46024 Valencia.",
+  "Acces PMR en tot el recinte, entrades adaptades i banys accessibles.",
+  "Com arribar: Metro L10, EMT 4/19/30/92/95, bicicleta o coche.",
+  "Parking recomanat: Marina, Umbracle i zona puerto/Ciudad de las Artes.",
+  "Espai lliure de violencies, amb zona gastronomica, descans, merch i punts de trobada.",
+  "Aforament limitat. Es recomana la reserva anticipada per evitar cues.",
+];
 
 const ticketsDia: TicketDia[] = [
   {
@@ -42,6 +58,23 @@ const ticketsDia: TicketDia[] = [
 ];
 
 const artistButtonClass = "inline-block cursor-pointer hover:italic text-left uppercase";
+
+const ticketSeleccionado = ref<TicketDia | null>(null);
+
+const abrirDetalleDia = (ticket: TicketDia) => {
+  ticketSeleccionado.value = ticket;
+};
+
+const cerrarDetalleDia = () => {
+  ticketSeleccionado.value = null;
+};
+
+const obtenerArtistasDia = (ticket: TicketDia) => [
+  ...ticket.principales,
+  ...ticket.secundarios,
+  ...ticket.terciarios,
+  ...(ticket.cuaternarios ?? []),
+];
 </script>
 
 <template>
@@ -66,7 +99,12 @@ const artistButtonClass = "inline-block cursor-pointer hover:italic text-left up
               <div
                 v-for="ticket in ticketsDia"
                 :key="ticket.id"
-                class="group -mx-4 grid grid-cols-1 gap-4 px-4 py-10 transition-all duration-300 md:-mx-6 md:grid-cols-[240px_1fr_150px] md:gap-12 md:px-6 lg:-mx-8 lg:px-8"
+                class="group -mx-4 grid cursor-pointer grid-cols-1 gap-4 px-4 py-10 transition-all duration-300 hover:bg-[#eb1d2b]/10 md:-mx-6 md:grid-cols-[240px_1fr_150px] md:gap-12 md:px-6 lg:-mx-8 lg:px-8"
+                role="button"
+                tabindex="0"
+                @click="abrirDetalleDia(ticket)"
+                @keydown.enter.prevent="abrirDetalleDia(ticket)"
+                @keydown.space.prevent="abrirDetalleDia(ticket)"
               >
                 <div class="flex flex-col">
                   <div class="flex items-baseline gap-2">
@@ -109,6 +147,7 @@ const artistButtonClass = "inline-block cursor-pointer hover:italic text-left up
                   <span class="text-5xl font-black leading-none tracking-tighter md:text-6xl">{{ ticket.precio }}</span>
                   <button
                     class="font-hover-alt mt-4 w-full bg-[#eb1d2b] px-6 py-3 text-xl font-black text-[#fcda4b] border-4 border-[#eb1d2b] transition-all duration-200 hover:italic md:w-auto"
+                    @click.stop="abrirDetalleDia(ticket)"
                   >
                     reserva
                   </button>
@@ -181,6 +220,99 @@ const artistButtonClass = "inline-block cursor-pointer hover:italic text-left up
           </p>
         </div>
       </div>
+    </div>
+
+    <div
+      v-if="ticketSeleccionado"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4 backdrop-blur-sm md:p-8"
+      @click.self="cerrarDetalleDia"
+    >
+      <section class="max-h-[94dvh] w-full max-w-5xl overflow-y-auto bg-[#fcda4b] text-[#eb1d2b] shadow-2xl">
+        <div class="grid grid-cols-1 gap-6 p-5 md:grid-cols-[150px_1fr] md:gap-9 md:p-8 lg:p-9">
+          <div>
+            <span class="block text-[6.5rem] font-black leading-[0.75] tracking-tighter md:text-[8rem]">
+              {{ ticketSeleccionado.fecha }}
+            </span>
+            <span class="mt-3 block text-lg font-black uppercase leading-none tracking-tighter md:text-xl">
+              {{ ticketSeleccionado.mes }}
+            </span>
+          </div>
+
+          <div>
+            <div class="grid gap-8 lg:grid-cols-[1fr_0.74fr]">
+              <div>
+                <span class="mb-3 block text-xs font-black uppercase tracking-widest opacity-70 md:text-sm">
+                  Artistas
+                </span>
+                <div class="flex flex-wrap gap-x-4 gap-y-2">
+                  <span
+                    v-for="artista in obtenerArtistasDia(ticketSeleccionado)"
+                    :key="artista"
+                    class="text-2xl font-black leading-none tracking-tight md:text-3xl lg:text-4xl"
+                  >
+                    {{ artista }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="lg:text-right">
+                <button
+                  type="button"
+                  class="mb-5 h-12 w-12 transition-transform hover:scale-105 active:scale-95 focus:outline-none md:h-16 md:w-16"
+                  aria-label="Cerrar informacion del dia"
+                  @click="cerrarDetalleDia"
+                >
+                  <img
+                    src="/imagines/Esclat/BACKRED.png"
+                    alt=""
+                    class="h-full w-full object-contain"
+                  />
+                </button>
+
+                <span class="mb-3 block text-xs font-black uppercase tracking-widest opacity-70 md:text-sm">
+                  Horarios
+                </span>
+                <div class="grid gap-4">
+                  <div>
+                    <span class="block text-xs font-black uppercase opacity-70 md:text-sm">Apertura</span>
+                    <span class="block text-4xl font-black leading-none tracking-tighter md:text-5xl">
+                      {{ horarioFestival.apertura }}H
+                    </span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-black uppercase opacity-70 md:text-sm">Cierre</span>
+                    <span class="block text-4xl font-black leading-none tracking-tighter md:text-5xl">
+                      {{ horarioFestival.cierre }}H
+                    </span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="mt-7 text-right text-2xl font-black uppercase leading-none transition-transform hover:scale-105 hover:italic active:scale-95 md:text-3xl"
+                >
+                  Comprar gratuitamente
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-9">
+              <span class="mb-3 block text-xs font-black uppercase tracking-widest opacity-70 md:text-sm">
+                Datos importantes
+              </span>
+              <ul class="grid gap-x-8 gap-y-3 md:grid-cols-2">
+                <li
+                  v-for="dato in datosImportantes"
+                  :key="dato"
+                  class="text-xs font-bold leading-tight opacity-85 md:text-sm"
+                >
+                  {{ dato }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </template>
