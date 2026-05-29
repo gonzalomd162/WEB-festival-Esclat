@@ -190,8 +190,14 @@ export const artistas: Artista[] = [
   },
 ];
 
+const normalizarNombre = (nombre: string) =>
+  nombre
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase();
+
 export const artistasPorNombre = new Map(
-  artistas.map((artista) => [artista.nombre.toLocaleLowerCase(), artista]),
+  artistas.map((artista) => [normalizarNombre(artista.nombre), artista]),
 );
 
 export const artistasPorSlug = new Map(
@@ -199,4 +205,4 @@ export const artistasPorSlug = new Map(
 );
 
 export const obtenerArtistaPorNombre = (nombre: string) =>
-  artistasPorNombre.get(nombre.toLocaleLowerCase());
+  artistasPorNombre.get(normalizarNombre(nombre));

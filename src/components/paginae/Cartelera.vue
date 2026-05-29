@@ -148,9 +148,9 @@ const cerrarModal = () => {
 
     <div 
       v-if="artistaSeleccionado" 
-      class="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-[#fcda4b] text-[#eb1d2b] animate-in"
+      class="artist-modal fixed inset-0 z-50 grid w-screen bg-[#fcda4b] text-[#eb1d2b] animate-in"
     >
-      <div class="relative w-full flex-grow bg-black">
+      <div class="artist-modal__media relative min-h-0 w-full bg-black">
         <img 
           :src="artistaSeleccionado.foto" 
           :alt="artistaSeleccionado.nombre" 
@@ -160,24 +160,33 @@ const cerrarModal = () => {
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
 
         <div class="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 text-left">
-          <h4 class="text-5xl font-black uppercase tracking-tighter  drop-shadow-md md:text-8xl lg:text-9xl">
+          <h4 class="artist-modal__title font-black uppercase tracking-tighter drop-shadow-md">
             {{ artistaSeleccionado.nombre }}
           </h4>
         </div>
 
         <button 
           type="button" 
-          class="absolute right-6 top-6  text-[#eb1d2b] px-4 py-2 text-4xl font-black  tracking-wider transition-transform hover:scale-105 hover:text-[#fcda4b]  active:scale-95 focus:outline-none rounded-none"
+          class="group absolute right-4 top-4 h-12 w-12 transition-transform hover:scale-105 active:scale-95 focus:outline-none md:right-6 md:top-6 md:h-16 md:w-16"
+          aria-label="Cerrar detalle del artista"
           @click="cerrarModal"
         >
-           X
+          <img
+            src="/imagines/Esclat/BACKRED.png"
+            alt=""
+            class="h-full w-full object-contain group-hover:hidden"
+          />
+          <img
+            src="/imagines/Esclat/BACKYW.png"
+            alt=""
+            class="hidden h-full w-full object-contain group-hover:block"
+          />
         </button>
       </div>
 
-      <div class="w-full bg-[#fcda4b] p-6 md:p-12">
-        <div class="mx-auto max-w-7xl text-left">
-          
-          <p class="text-xl font-bold leading-snug md:text-3xl lg:text-4xl  tracking-tight">
+      <div class="artist-modal__content min-h-0 w-full overflow-y-auto bg-[#fcda4b] px-5 py-3 sm:px-6 sm:py-4 md:px-10 md:py-6 lg:px-12 lg:py-7">
+        <div class="flex h-full items-center text-left">
+          <p class="artist-modal__description font-bold leading-snug tracking-tight">
             {{ artistaSeleccionado.descripcion }}
           </p>
         </div>
@@ -195,6 +204,48 @@ const cerrarModal = () => {
 .animate-in {
   animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.artist-modal {
+  height: 100vh;
+  height: 100dvh;
+  grid-template-rows: minmax(0, 72fr) minmax(0, 28fr);
+}
+
+.artist-modal__media,
+.artist-modal__content {
+  min-width: 0;
+}
+
+.artist-modal__title {
+  font-size: clamp(2.75rem, 12vw, 8.5rem);
+  line-height: 0.82;
+}
+
+.artist-modal__description {
+  font-size: clamp(1.15rem, 5vw, 1.75rem);
+}
+
+@media (min-width: 768px) {
+  .artist-modal {
+    grid-template-rows: minmax(0, 76fr) minmax(0, 24fr);
+  }
+
+  .artist-modal__title {
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+  }
+
+  .artist-modal__description {
+    font-size: clamp(0.95rem, 3.2vw, 2.1rem);
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .artist-modal {
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  }
+}
+
 @keyframes slideUp {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
