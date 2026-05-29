@@ -1,17 +1,17 @@
 <script setup lang="ts">
 const highlights = [
   {
-    value: "3",
+    value: "3 Dies de festival",
     label: "Dies de festival",
     text: "Una programació pensada per descobrir bandes, tornar als teus favorits i quedar-se fins al tancament.",
   },
   {
-    value: "25+",
+    value: "+25 Artistes i activitats",
     label: "Artistes i activitats",
     text: "Concerts, tallers, fanzines, sessions i petites rareses repartides per tot el recinte.",
   },
   {
-    value: "01",
+    value: "Recinte urbà",
     label: "Recinte urbà",
     text: "Les naus concentra escenaris, zona gastronòmica, espais de descans i punts de trobada.",
   },
@@ -57,8 +57,8 @@ const experience = [
               >
                 <div class="flex flex-col">
                   <div class="flex items-baseline gap-2">
-                    <span class="text-8xl font-black leading-none tracking-tighter md:text-9xl">{{ item.value }}</span>
-                    <span class="text-sm font-black tracking-tighter md:text-base">{{ item.label }}</span>
+                    <span class="text-8xl font-black leading-none tracking-tighter md:text-5xl">{{ item.value }}</span>
+                    
                   </div>
                 </div>
 
@@ -101,7 +101,7 @@ const experience = [
 
               <div class="relative z-10 mt-12 flex flex-col items-start gap-6 pt-8 -ml-1 md:-ml-2">
                 <div class="flex items-baseline gap-2">
-                  <span class="text-6xl font-black leading-none tracking-tighter md:text-8xl italic">2026</span>
+                  <span class="text-6xl font-black leading-none tracking-tighter md:text-8xl ">2026</span>
                 </div>
                 <RouterLink
                   to="/entradas"
