@@ -42,8 +42,8 @@ const parkings = [
 <template>
   <main class="relative min-h-screen overflow-hidden bg-[#fcda4b] p-6 font-sans text-[#eb1d2b] selection:bg-[#eb1d2b] selection:text-[#fcda4b] md:p-12">
     <div class="relative z-10 mx-auto max-w-[1600px]">
-      <div class="mb-12 flex items-end justify-between border-b-4 border-[#eb1d2b] pb-4">
-        <h2 class="text-6xl font-black uppercase italic leading-[0.8] tracking-tighter md:text-9xl">
+      <div class="mb-12 flex items-end justify-between  border-[#eb1d2b] pb-4">
+        <h2 class="text-6xl font-black uppercase  leading-[0.8] tracking-tighter md:text-9xl">
           Ubicació
         </h2>
 
@@ -61,25 +61,25 @@ const parkings = [
 
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
         <section class="space-y-16 lg:col-span-7">
-          <div class="border-l-[12px] border-[#eb1d2b] py-4 pl-10">
+          <div class="  py-4 pl-9">
             <span class="mb-4 block text-sm font-black uppercase tracking-[0.2em] opacity-70">
-              Direcció
+              
             </span>
-            <h3 class="text-5xl font-black uppercase leading-[0.85] tracking-tighter md:text-8xl">
+            <h3 class="text-5xl font-black uppercase leading-[1] tracking-tighter md:text-7xl">
               C/ Joan Verdeguer, 16 <br>
               46024 València, Espanya
             </h3>
           </div>
 
-          <div class="flex flex-wrap gap-12 border-l-[12px] border-[#eb1d2b] py-4 pl-10">
+          <div class="flex flex-wrap gap-12  border-[#eb1d2b] py-4 pl-10">
             <div>
-              <span class="mb-4 block text-sm font-black tracking-[0.2em] opacity-70">
+              <span class="mb-4 block text-sm font-black  opacity-70">
                 Obertura
               </span>
               <p class="text-5xl font-black md:text-8xl leading-none">16:00H</p>
             </div>
             <div>
-              <span class="mb-4 block text-sm font-black tracking-[0.2em] opacity-70">
+              <span class="mb-4 block text-sm font-black  opacity-70">
                 Tancament
               </span>
               <p class="text-5xl font-black md:text-8xl leading-none">03:30H</p>
@@ -87,14 +87,14 @@ const parkings = [
           </div>
 
           <div class="space-y-10">
-            <h4 class="pb-4 text-4xl font-black uppercase italic md:text-7xl">
+            <h4 class="pb-4 text-4xl font-black uppercase  md:text-7xl">
               Com arribar
             </h4>
 
             <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
               <div v-for="transporte in transportes" :key="transporte.tipo" class="space-y-3">
-                <span class="text-2xl font-black uppercase md:text-4xl">{{ transporte.tipo }}</span>
-                <p class="text-base font-bold uppercase leading-tight opacity-90 md:text-xl">
+                <span class="text-2xl font-black  md:text-4xl">{{ transporte.tipo }}</span>
+                <p class="text-base font-bold  leading-tight opacity-90 md:text-xl">
                   {{ transporte.detalles }}
                 </p>
               </div>
@@ -102,14 +102,14 @@ const parkings = [
           </div>
 
           <div class="border-[8px] border-[#eb1d2b] bg-[#eb1d2b] p-10 text-[#fcda4b]">
-            <h4 class="mb-8 text-4xl font-black uppercase italic md:text-5xl">
+            <h4 class="mb-8 text-4xl font-black uppercase  md:text-5xl">
               Parking recomanat
             </h4>
             <ul class="space-y-6">
               <li
                 v-for="parking in parkings"
                 :key="parking"
-                class="flex items-center gap-4 text-lg font-bold uppercase tracking-tight md:text-2xl"
+                class="flex items-center gap-4 text-lg font-bold  tracking-tight md:text-2xl"
               >
                 <span class="h-6 w-6 shrink-0 bg-[#fcda4b]"></span>
                 {{ parking }}
@@ -152,14 +152,14 @@ const parkings = [
           </div>
 
           <div class="pt-32">
-            <h4 class="mb-10 text-4xl font-black uppercase italic md:text-6xl">
+            <h4 class="mb-10 text-4xl font-black uppercase  md:text-6xl">
               Sales Disponibles
             </h4>
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div
                 v-for="sala in sales"
                 :key="sala"
-                class="cursor-default border-4 border-[#eb1d2b] p-6 text-2xl font-black uppercase transition-colors hover:bg-[#eb1d2b] hover:text-[#fcda4b] md:text-3xl"
+                class="cursor-default  border-[#eb1d2b] p-6 text-2xl font-black uppercase transition-colors hover:bg-[#eb1d2b] hover:text-[#fcda4b] md:text-3xl"
               >
                 {{ sala }}
               </div>
