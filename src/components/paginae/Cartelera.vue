@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+// 1. Importamos desde tu archivo de datos (usa @/data/artistas o ./artistas según tu estructura)
+import { obtenerArtistaPorNombre, type Artista } from './artistas';
+
 const lineup = {
   principales:
     "Wilco - Los Planetas - Carolina Durante - Manel - The Divine Comedy - Hoke",
@@ -31,6 +35,23 @@ const separarArtistas = (linea: string) => linea.split(" - ");
 
 const botonArtistaClase =
   "inline cursor-pointer bg-transparent p-0 text-inherit hover:italic focus-visible:outline-none";
+
+const artistaSeleccionado = ref<Artista | null>(null);
+
+const abrirDetalleArtista = (nombre: string) => {
+  const nombreLimpio = nombre.trim();
+  const artista = obtenerArtistaPorNombre(nombreLimpio);
+  
+  if (artista) {
+    artistaSeleccionado.value = artista;
+  } else {
+    console.warn(`No se encontró la información para el artista: ${nombreLimpio}`);
+  }
+};
+
+const cerrarModal = () => {
+  artistaSeleccionado.value = null;
+};
 </script>
 
 <template>
@@ -60,7 +81,11 @@ const botonArtistaClase =
               v-for="(artista, idx) in separarArtistas(lineup.principales)"
               :key="artista"
             >
-              <button type="button" :class="botonArtistaClase">
+              <button 
+                type="button" 
+                :class="botonArtistaClase"
+                @click="abrirDetalleArtista(artista)"
+              >
                 {{ artista }}
               </button>
               <span v-if="idx < separarArtistas(lineup.principales).length - 1"> - </span>
@@ -84,7 +109,11 @@ const botonArtistaClase =
               v-for="(artista, artistaIdx) in separarArtistas(linea)"
               :key="artista"
             >
-              <button type="button" :class="botonArtistaClase">
+              <button 
+                type="button" 
+                :class="botonArtistaClase"
+                @click="abrirDetalleArtista(artista)"
+              >
                 {{ artista }}
               </button>
               <span v-if="artistaIdx < separarArtistas(linea).length - 1"> - </span>
@@ -106,7 +135,6 @@ const botonArtistaClase =
       </div>
     </div>
 
-    <!-- Elementos decorativos -->
     <img 
       src="/imagines/Esclat/silla.png" 
       alt="" 
@@ -117,11 +145,58 @@ const botonArtistaClase =
       alt="" 
       class="absolute bottom-4 right-4 lg:top-1/2 lg:bottom-auto lg:right-10 z-0 w-40 md:w-80 lg:w-[400px] pointer-events-none opacity-90 lg:-translate-y-1/2"
     >
+
+    <div 
+      v-if="artistaSeleccionado" 
+      class="fixed inset-0 z-50 flex h-screen w-screen flex-col bg-[#fcda4b] text-[#eb1d2b] animate-in"
+    >
+      <div class="relative w-full flex-grow bg-black">
+        <img 
+          :src="artistaSeleccionado.foto" 
+          :alt="artistaSeleccionado.nombre" 
+          class="h-full w-full object-cover"
+        />
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <div class="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 text-left">
+          <h4 class="text-5xl font-black uppercase tracking-tighter  drop-shadow-md md:text-8xl lg:text-9xl">
+            {{ artistaSeleccionado.nombre }}
+          </h4>
+        </div>
+
+        <button 
+          type="button" 
+          class="absolute right-6 top-6  text-[#eb1d2b] px-4 py-2 text-4xl font-black  tracking-wider transition-transform hover:scale-105 hover:text-[#fcda4b]  active:scale-95 focus:outline-none rounded-none"
+          @click="cerrarModal"
+        >
+           X
+        </button>
+      </div>
+
+      <div class="w-full bg-[#fcda4b] p-6 md:p-12">
+        <div class="mx-auto max-w-7xl text-left">
+          
+          <p class="text-xl font-bold leading-snug md:text-3xl lg:text-4xl  tracking-tight">
+            {{ artistaSeleccionado.descripcion }}
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
 .RouterLink {
   transition: all 0.3s ease;
+}
+
+/* Animación de entrada para el lienzo completo */
+.animate-in {
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 </style>
