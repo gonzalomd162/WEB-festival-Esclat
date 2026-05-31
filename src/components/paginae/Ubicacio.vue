@@ -101,41 +101,49 @@ const parkings = [
             </div>
           </div>
 
-          <div class="border-[8px] border-[#eb1d2b] bg-[#eb1d2b] p-10 text-[#fcda4b]">
-            <h4 class="mb-8 text-4xl font-black uppercase  md:text-5xl">
-              Parking recomanat
-            </h4>
-            <ul class="space-y-6">
-              <li
-                v-for="parking in parkings"
-                :key="parking"
-                class="flex items-center gap-4 text-lg font-bold  tracking-tight md:text-2xl"
-              >
-                <span class="h-6 w-6 shrink-0 bg-[#fcda4b]"></span>
-                {{ parking }}
-              </li>
-            </ul>
+          <div class="relative px-10 py-16 pl-20 text-[#eb1d2b]">
+            <img
+              src="/imagines/Esclat/RECTANGULO.png"
+              alt=""
+              class="pointer-events-none absolute -top-20 -left-16 h-[calc(100%+9rem)] w-[calc(100%+24rem)] object-fill"
+              aria-hidden="true"
+            >
+            <div class="relative">
+              <h4 class="mb-8 text-4xl font-black uppercase  md:text-5xl">
+                Parking recomanat
+              </h4>
+              <ul class="space-y-6">
+                <li
+                  v-for="parking in parkings"
+                  :key="parking"
+                  class="flex items-center gap-4 text-lg font-bold  tracking-tight md:text-2xl"
+                >
+                  <span class="h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
+                  {{ parking }}
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="space-y-8 border-l-[12px] border-[#eb1d2b] bg-[#eb1d2b]/10 p-10">
-            <h4 class="text-3xl font-black uppercase italic md:text-5xl">
+          <div class="space-y-8 p-10">
+            <h4 class="text-4xl font-black uppercase md:text-5xl">
               Accesibilitat
             </h4>
-            <ul class="space-y-4 text-sm font-bold uppercase leading-tight md:text-xl">
+            <ul class="space-y-4 text-sm font-bold  leading-tight md:text-2xl">
               <li class="flex items-start gap-3">
-                <span class="mt-1 font-black">/</span>
+                <span class="mt-1 h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
                 Accés PMR en tot el recinte.
               </li>
               <li class="flex items-start gap-3">
-                <span class="mt-1 font-black">/</span>
+                <span class="mt-1 h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
                 Entrades adaptades i senyalitzades.
               </li>
               <li class="flex items-start gap-3">
-                <span class="mt-1 font-black">/</span>
+                <span class="mt-1 h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
                 Informació sobre movilitat reduïda disponible en el punt de info.
               </li>
               <li class="flex items-start gap-3">
-                <span class="mt-1 font-black">/</span>
+                <span class="mt-1 h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
                 Banys accesibles distribuïts per les naus.
               </li>
             </ul>
@@ -143,7 +151,7 @@ const parkings = [
         </section>
 
         <section class="space-y-20 lg:col-span-5">
-          <div class="w-full">
+          <div class="w-full pr-4 md:pr-8 lg:pr-12">
             <img
               src="/imagines/Esclat/mapa.png"
               alt="Ilustracion del mapa del recinto"
@@ -159,16 +167,22 @@ const parkings = [
               <div
                 v-for="sala in sales"
                 :key="sala"
-                class="cursor-default  border-[#eb1d2b] p-6 text-2xl font-black uppercase transition-colors hover:bg-[#eb1d2b] hover:text-[#fcda4b] md:text-3xl"
+                class="group relative cursor-default p-6 text-2xl font-black uppercase md:text-3xl"
               >
-                {{ sala }}
+                <img
+                  src="/imagines/Esclat/RECTANGULO.png"
+                  alt=""
+                  class="pointer-events-none absolute -top-5 -left-5 hidden h-[calc(100%+2.5rem)] w-[calc(100%+2.5rem)] object-fill group-hover:block"
+                  aria-hidden="true"
+                >
+                <span class="relative">{{ sala }}</span>
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      <div class="mt-24 flex items-center justify-between border-t-4 border-[#eb1d2b] pt-8">
+      <div class="mt-24 flex items-center justify-between pt-8">
         <p class="text-xs font-bold uppercase tracking-widest">
           Esclat Festival 2026 - València
         </p>
