@@ -86,7 +86,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
           <RouterLink to="/" class="group flex flex-col items-end transition-transform hover:scale-105 active:scale-95">
             <span class="mb-1 text-[10px] font-black uppercase tracking-widest opacity-0 transition-opacity group-hover:opacity-100">Volver a Inicio</span>
             <img
-              src="/imagines/Esclat/Artboard 2_1-8.png"
+              src="/imagines/Esclat/ESCLAT.png"
               alt="Botón de Inicio"
               class="h-auto w-20 object-contain md:w-32"
             >

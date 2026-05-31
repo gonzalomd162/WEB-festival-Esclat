@@ -52,7 +52,7 @@ const parkings = [
             Tornar a inici
           </span>
           <img
-            src="/imagines/Esclat/Artboard 2_1-8.png"
+            src="/imagines/Esclat/ESCLAT.png"
             alt="Boton de Inicio"
             class="h-auto w-20 object-contain md:w-32"
           >
@@ -101,27 +101,27 @@ const parkings = [
             </div>
           </div>
 
-          <div class="relative px-10 py-16 pl-20 text-[#eb1d2b]">
-            <img
-              src="/imagines/Esclat/RECTANGULO.png"
-              alt=""
-              class="pointer-events-none absolute -top-20 -left-16 h-[calc(100%+9rem)] w-[calc(100%+24rem)] object-fill"
-              aria-hidden="true"
-            >
-            <div class="relative">
-              <h4 class="mb-8 text-4xl font-black uppercase  md:text-5xl">
-                Parking recomanat
-              </h4>
-              <ul class="space-y-6">
-                <li
-                  v-for="parking in parkings"
-                  :key="parking"
-                  class="flex items-center gap-4 text-lg font-bold  tracking-tight md:text-2xl"
-                >
-                  <span class="h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
-                  {{ parking }}
-                </li>
-              </ul>
+          <div class="relative mx-auto w-full px-2 py-12 text-[#eb1d2b] md:px-0 md:py-0">
+            <div class="relative px-10 py-16 md:w-auto md:px-16 md:py-16 md:pl-12">
+              <span
+                class="pointer-events-none absolute -top-24 -right-12 -bottom-16 -left-10 bg-[url('/imagines/Esclat/RECTANGULO.png')] bg-[length:100%_100%] bg-no-repeat md:-top-20 md:-right-25 md:-bottom-16 md:-left-24"
+                aria-hidden="true"
+              ></span>
+              <div class="relative">
+                <h4 class="mb-8 text-4xl font-black uppercase md:text-5xl">
+                  Parking recomanat
+                </h4>
+                <ul class="space-y-4 text-sm font-bold leading-tight md:space-y-6 md:text-2xl">
+                  <li
+                    v-for="parking in parkings"
+                    :key="parking"
+                    class="flex items-start gap-3"
+                  >
+                    <span class="mt-1 h-6 w-6 shrink-0 bg-[#eb1d2b]"></span>
+                    {{ parking }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -169,15 +169,18 @@ const parkings = [
                 :key="sala"
                 class="group relative cursor-default p-6 text-2xl font-black uppercase md:text-3xl"
               >
-                <img
-                  src="/imagines/Esclat/RECTANGULO.png"
-                  alt=""
-                  class="pointer-events-none absolute -top-5 -left-5 hidden h-[calc(100%+2.5rem)] w-[calc(100%+2.5rem)] object-fill group-hover:block"
+                <span
+                  class="pointer-events-none absolute -top-5 -right-3 -bottom-5 -left-8 hidden bg-[url('/imagines/Esclat/RECTANGULO.png')] bg-[length:100%_100%] bg-no-repeat group-hover:block"
                   aria-hidden="true"
-                >
-                <span class="relative">{{ sala }}</span>
+                ></span>
+                <span class="relative z-10">{{ sala }}</span>
               </div>
             </div>
+            <img
+              src="/imagines/Esclat/LEON.PNG"
+              alt="Leon"
+              class="mt-10 h-auto w-[165%] max-w-[calc(100vw-2rem)] object-contain sm:w-[190%] md:w-[220%] lg:w-full lg:max-w-full"
+            >
           </div>
         </section>
       </div>

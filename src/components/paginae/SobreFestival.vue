@@ -40,7 +40,7 @@ const experience = [
           <RouterLink to="/" class="group flex flex-col items-end transition-transform hover:scale-105 active:scale-95">
             <span class="mb-1 text-[10px] font-black uppercase tracking-widest opacity-0 transition-opacity group-hover:opacity-100">Volver a inicio</span>
             <img
-              src="/imagines/Esclat/Artboard 2_1-8.png"
+              src="/imagines/Esclat/ESCLAT.png"
               alt="Botón de inicio"
               class="h-auto w-20 object-contain md:w-32"
             >
@@ -109,6 +109,11 @@ const experience = [
                 >
                   Reserva tickets
                 </RouterLink>
+                <img
+                  src="/imagines/Esclat/CALAMAR.PNG"
+                  alt="Calamar"
+                  class="mt-4 h-auto w-[165%] max-w-[calc(100vw-2rem)] self-center object-contain sm:w-[190%] md:w-[220%] lg:w-[260%]"
+                >
               </div>
             </div>
           </section>

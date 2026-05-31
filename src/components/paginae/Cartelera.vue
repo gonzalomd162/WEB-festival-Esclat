@@ -67,7 +67,7 @@ const cerrarModal = () => {
             Volver a Inicio
           </span>
           <img
-            src="/imagines/Esclat/Artboard 2_1-8.png"
+            src="/imagines/Esclat/ESCLAT.png"
             alt="Boton de Inicio"
             class="h-auto w-20 object-contain md:w-32"
           >
