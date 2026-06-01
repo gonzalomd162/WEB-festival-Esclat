@@ -227,7 +227,20 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/45 p-4 backdrop-blur-sm md:p-8"
       @click.self="cerrarDetalleDia"
     >
-      <section class="max-h-[94dvh] w-full max-w-5xl overflow-y-auto bg-[#fcda4b] text-[#eb1d2b] shadow-2xl">
+      <section class="relative max-h-[94dvh] w-full max-w-5xl overflow-y-auto bg-[#fcda4b] text-[#eb1d2b] shadow-2xl">
+        <button
+          type="button"
+          class="absolute right-5 top-5 z-10 h-12 w-12 transition-transform hover:scale-105 active:scale-95 focus:outline-none md:right-8 md:top-8 md:h-16 md:w-16 lg:hidden"
+          aria-label="Cerrar informacion del dia"
+          @click="cerrarDetalleDia"
+        >
+          <img
+            src="/imagines/Esclat/BACKRED.png"
+            alt=""
+            class="h-full w-full object-contain"
+          />
+        </button>
+
         <div class="grid grid-cols-1 gap-6 p-5 md:grid-cols-[150px_1fr] md:gap-9 md:p-8 lg:p-9">
           <div>
             <span class="block text-[6.5rem] font-black leading-[0.75] tracking-tighter md:text-[8rem]">
@@ -258,7 +271,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
               <div class="lg:text-right">
                 <button
                   type="button"
-                  class="mb-5 h-12 w-12 transition-transform hover:scale-105 active:scale-95 focus:outline-none md:h-16 md:w-16"
+                  class="mb-5 hidden h-16 w-16 transition-transform hover:scale-105 active:scale-95 focus:outline-none lg:inline-block"
                   aria-label="Cerrar informacion del dia"
                   @click="cerrarDetalleDia"
                 >
