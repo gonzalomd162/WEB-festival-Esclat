@@ -3,6 +3,7 @@ import { computed, nextTick, ref } from "vue";
 
 const videos = [
   { src: "/videos/MISERIA.mp4", artist: "NICO MISERIA" },
+  { src: "/videos/WILCO.mp4", artist: "WILCO" },
   { src: "/videos/PLANETAS.mp4", artist: "LOS PLANETAS" },
   { src: "/videos/GREEN.mp4", artist: "ADAM GREEN" },
   { src: "/videos/EMPM.mp4", artist: "EL MATÓ A UN POLICÍA MOTORIZADO" },
@@ -36,6 +37,8 @@ const currentVideo = computed<VideoItem>(
 const currentVideoScale = computed(() => {
   switch (currentVideo.value.src) {
     case "/videos/MALAGESTION.mp4":
+      return "scale-[1.38]";
+    case "/videos/HOKE.mp4":
       return "scale-[1.38]";
     case "/videos/EELS.mp4":
       return "scale-[1.22]";
