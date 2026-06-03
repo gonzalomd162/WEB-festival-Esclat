@@ -23,8 +23,8 @@ const links = [
   { label: "Tickets", to: "/entradas" },
   { label: "Cartelera", to: "/cartelera" },
   { label: "Sobre el Festival", to: "/sobre-el-festival" },
-  { label: "Ubicación", to: "/ubicacion" },
-  { label: "MERCH", to: "/merch" },
+  { label: "Ubicació", to: "/ubicacion" },
+  { label: "Merch", to: "/merch" },
 ] as const;
 
 const currentVideoIndex = ref(0);

@@ -11,182 +11,182 @@ export const artistas: Artista[] = [
     slug: "wilco",
     foto: "/imagines/Esclat/WILCO.jpg",
     descripcion:
-      "Banda imprescindible del rock alternativo americano, con canciones que mezclan melodias luminosas, guitarras abiertas y una sensibilidad experimental muy propia.",
+      "Banda imprescindible del rock alternatiu americà, amb cançons que barregen melodies lluminoses, guitarres obertes i una sensibilitat experimental molt pròpia.",
   },
   {
     nombre: "Los Planetas",
     slug: "los-planetas",
     foto: "/imagines/Esclat/LOSPLANETAS.jpg",
     descripcion:
-      "Referentes del indie en castellano, Los Planetas cruzan ruido, pop y emocion con un repertorio que ya forma parte de la memoria de varias generaciones.",
+      "Referents de l'indie en castellà, Los Planetas creuen soroll, pop i emocion amb un repertori que ja forma part de la memòria de diverses generacions.",
   },
   {
     nombre: "Carolina Durante",
     slug: "carolina-durante",
     foto: "/imagines/Esclat/CAROLINADURANTE.jpg",
     descripcion:
-      "Guitarras directas, coros urgentes y letras afiladas: Carolina Durante llevan el pulso del pop rock actual a un directo electrico y contagioso.",
+      "Guitarres directes, cors urgents i lletres afilades: Carolina Durante porten el pols del pop rock actual a un directe elèctric i contagiós.",
   },
   {
     nombre: "Manel",
     slug: "manel",
     foto: "/imagines/Esclat/MANEL.jpg",
     descripcion:
-      "El grupo barcelones combina pop, narracion y arreglos elegantes en canciones que se mueven entre lo cotidiano, lo ironico y lo emocional.",
+      "El grup barceloní combina pop, narració i arranjaments elegants en cançons que es mouen entre allò quotidià, allò irònic i allò emocional.",
   },
   {
     nombre: "The Divine Comedy",
     slug: "the-divine-comedy",
     foto: "/imagines/Esclat/THEDIVINECOMEDY.jpg",
     descripcion:
-      "Proyecto liderado por Neil Hannon, con pop orquestal, humor fino y una escritura teatral que convierte cada cancion en una escena propia.",
+      "Projecte liderat per Neil Hannon, amb pop orquestral, humor fi i una escriptura teatral que converteix cada cançó en una escena pròpia.",
   },
   {
     nombre: "Hoke",
     slug: "hoke",
     foto: "/imagines/Esclat/HOKE.jpg",
     descripcion:
-      "Voz singular de la escena urbana valenciana, Hoke trabaja el rap con precision, atmosfera y una forma de contar que suena cercana y nocturna.",
+      "Veu singular de l'escena urbana valenciana, Hoke treballa el rap amb precisió, atmosfera i una manera d'explicar que sona propera i nocturna.",
   },
   {
     nombre: "Adam Green",
     slug: "adam-green",
     foto: "/imagines/Esclat/ADAMGREEN.jpg",
     descripcion:
-      "Cantautor neoyorquino de espiritu anti-folk, mezcla canciones breves, humor absurdo y melodias desarmantes con una personalidad muy reconocible.",
+      "Cantautor novaiorquès d'esperit anti-folk, barreja cançons breus, humor absurd i melodies desarmants amb una personalitat molt reconeixible.",
   },
   {
-    nombre: "Alcala Norte",
+    nombre: "Alcalá Norte",
     slug: "alcala-norte",
     foto: "/imagines/Esclat/ALCALANORTE.jpg",
     descripcion:
-      "Post punk castizo y urgente, con himnos de barrio, guitarras tensas y una energia que convierte cada concierto en una descarga inmediata.",
+      "Post punk castís i urgent, amb himnes de barri, guitarres tenses i una energia que converteix cada concert en una descàrrega immediata.",
   },
   {
     nombre: "Eels",
     slug: "eels",
     foto: "/imagines/Esclat/EELS.jpg",
     descripcion:
-      "La banda de Mark Oliver Everett se mueve entre folk, rock y pop melancolico, siempre con canciones honestas, rugosas y profundamente humanas.",
+      "La banda de Mark Oliver Everett es mou entre folk, rock i pop malenconiós, sempre amb cançons honestes, rugoses i profundament humanes.",
   },
   {
-    nombre: "El Mato a un Policia Motorizado",
+    nombre: "El Mató a un Policia Motorizado",
     slug: "el-mato-a-un-policia-motorizado",
     foto: "/imagines/Esclat/ELMATO.jpeg",
     descripcion:
-      "Indie rock argentino de pulso hipnotico, guitarras expansivas y letras que convierten lo simple en algo enorme, emocional y coreable.",
+      "Indie rock argentí de pols hipnòtic, guitarres expansives i lletres que converteixen el que és simple en una cosa enorme, emocional i coreable.",
   },
   {
     nombre: "La Bien Querida",
     slug: "la-bien-querida",
     foto: "/imagines/Esclat/LABIENQUERIDA.jpeg",
     descripcion:
-      "Ana Fernandez-Villaverde firma un pop elegante y personal, entre la cancion romantica, la electronica suave y una mirada lirica muy directa.",
+      "Ana Fernández-Villaverde signa un pop elegant i personal, entre la cançó romàntica, l'electrònica suau i una mirada lírica molt directa.",
   },
   {
-    nombre: "Ill Pekeno y Ergo Pro",
+    nombre: "Ill Pekeño y Ergo Pro",
     slug: "ill-pekeno-y-ergo-pro",
     foto: "/imagines/Esclat/ILLPEKENOYERGOPRO.jpg",
     descripcion:
-      "Duo clave del rap underground estatal, con barras densas, beats oscuros y una quimica que suena cruda, precisa y muy reconocible.",
+      "Duo clau del rap underground estatal, amb barres denses, beats foscos i una química que sona crua, precisa i molt reconeixible.",
   },
   {
     nombre: "Boletus",
     slug: "boletus",
     foto: "/imagines/Esclat/BOLETUS.jpg",
     descripcion:
-      "Proyecto de sonido organico y jugueton, pensado para abrir huecos entre la psicodelia, el pop y una energia de directo cercana.",
+      "Projecte de so orgànic i juganer, pensat per obrir buits entre la psicodèlia, el pop i una energia de directe propera.",
   },
   {
     nombre: "El diablo de Shanghai",
     slug: "el-diablo-de-shanghai",
     foto: "/imagines/Esclat/ELDIABLO.jpg",
     descripcion:
-      "Canciones con nervio, imaginario nocturno y guitarras en primer plano, entre la actitud punk y el relato urbano.",
+      "Cançons amb nervi, imaginari nocturn i guitarres en primer pla, entre l'actitud punk i el relat urbà.",
   },
   {
     nombre: "Nepal Nepal",
     slug: "nepal-nepal",
     foto: "/imagines/Esclat/NEPALNEPAL.jpg",
     descripcion:
-      "Banda de pop alternativo con capas de guitarra, ritmo insistente y una manera fresca de llevar la melodia hacia terrenos mas raros.",
+      "Banda de pop alternatiu amb capes de guitarra, ritme insistent i una manera fresca de portar la melodia cap a terrenys més rars.",
   },
   {
     nombre: "L`haine",
     slug: "lhaine",
     foto: "/imagines/Esclat/L%27HAINE.jpg",
     descripcion:
-      "Propuesta intensa y frontal, con una estetica afilada y canciones que buscan el choque entre tension, palabra y ruido.",
+      "Proposta intensa i frontal, amb una estètica esmolada i cançons que busquen el xoc entre tensió, paraula i soroll.",
   },
   {
-    nombre: "Rita Payes",
+    nombre: "Rita Payés",
     slug: "rita-payes",
     foto: "/imagines/Esclat/RITAPAYES.jpg",
     descripcion:
-      "Trombonista y cantante catalana, Rita Payes une jazz, cancion popular y una sensibilidad calida que hace respirar cada interpretacion.",
+      "Trombonista i cantant catalana, Rita Payes uneix jazz, cançó popular i una sensibilitat càlida que fa respirar cada interpretació.",
   },
   {
     nombre: "Els Amics de les Arts",
     slug: "els-amics-de-les-arts",
     foto: "/imagines/Esclat/ELSAMICS.jpg",
     descripcion:
-      "Pop catalan narrativo, luminoso y coral, con letras que juegan con la amistad, la vida diaria y una ironia muy reconocible.",
+      "Pop català narratiu, lluminós i coral, amb lletres que juguen amb l'amistat, la vida diària i una ironia molt reconeixible.",
   },
   {
     nombre: "I'm From Barcelona",
     slug: "im-from-barcelona",
     foto: "/imagines/Esclat/FROMBARCELONA.jpg",
     descripcion:
-      "Colectivo sueco de pop expansivo y celebratorio, con coros enormes, melodias coloristas y una energia pensada para cantar en grupo.",
+      "Col·lectiu suec de pop expansiu i celebratori, amb cors enormes, melodies coloristes i una energia pensada per cantar en grup.",
   },
   {
     nombre: "Nico Miseria",
     slug: "nico-miseria",
     foto: "/imagines/Esclat/NICOMISERIA.jpg",
     descripcion:
-      "Productor y artista con una identidad muy marcada, Nico Miseria mezcla rap, texturas electronicas y una oscuridad elegante.",
+      "Productor i artista amb una identitat molt marcada, Nico Miseria barreja rap, textures electròniques i una foscor elegant.",
   },
   {
-    nombre: "Maria Arnal",
+    nombre: "María Arnal",
     slug: "maria-arnal",
     foto: "/imagines/Esclat/MARIAARNAL.jpg",
     descripcion:
-      "Maria Arnal explora la voz, la tradicion y la experimentacion contemporanea con canciones que suenan antiguas y futuristas a la vez.",
+      "Maria Arnal explora la veu, la tradició i l'experimentació contemporània amb cançons que sonen antigues i futuristes alhora.",
   },
   {
     nombre: "La buena Vida",
     slug: "la-buena-vida",
     foto: "/imagines/Esclat/LABUENAVIDA.jpg",
     descripcion:
-      "Nombre esencial del pop independiente, con canciones delicadas, melancolia luminosa y un gusto melodico que sigue sonando cercano.",
+      "Nom essencial del pop independent, amb cançons delicades, malenconia lluminosa i un gust melodic que segueix sonant proper.",
   },
   {
     nombre: "Platz",
     slug: "platz",
     foto: "/imagines/Esclat/PLATZ.jpg",
     descripcion:
-      "Platz trae una propuesta directa y atmosferica, entre guitarras, tension ritmica y un pulso de club llevado al formato banda.",
+      "Platz porta una proposta directa i atmosfèrica, entre guitarres, tensió rítmica i un pols de club portat al format banda.",
   },
   {
-    nombre: "Mala Gestion",
+    nombre: "Mala Gestión",
     slug: "mala-gestion",
     foto: "/imagines/Esclat/MALAGESTION.jpg",
     descripcion:
-      "Banda de actitud inmediata y canciones nerviosas, Mala Gestion mezcla energia punk, frescura pop y letras hechas para el directo.",
+      "Banda d'actitud immediata i cançons nervioses, Mala Gestion barreja energia punk, frescor pop i lletres fetes per al directe.",
   },
   {
     nombre: "Diego 900",
     slug: "diego-900",
     foto: "/imagines/Esclat/DIEGO900.jpg",
     descripcion:
-      "Diego 900 cruza sensibilidad urbana, melodias oscuras y una escritura emocional que se mueve entre la fragilidad y el golpe.",
+      "Diego 900 creua sensibilitat urbana, melodies fosques i una escriptura emocional que es mou entre la fragilitat i el cop.",
   },
   {
     nombre: "Luna",
     slug: "luna",
     foto: "/imagines/Esclat/LUNA.jpg",
     descripcion:
-      "Proyecto de pop nocturno y envolvente, con canciones que apuestan por la atmosfera, el detalle y una presencia escenica muy cuidada.",
+      "Projecte de pop nocturn i envoltant, amb cançons que aposten per l'atmosfera, el detall i una presència escènica molt cuidada.",
   },
 ];
 

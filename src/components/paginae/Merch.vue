@@ -4,8 +4,8 @@ import { computed, ref } from "vue";
 const carouselItems = [
   { src: "/imagines/Esclat/Carousel/CajaMockupSola.jpg", alt: "Caja mockup sola" },
   { src: "/imagines/Esclat/Carousel/CajasMockups.jpg", alt: "Cajas mockups" },
+  { src: "/imagines/Esclat/Carousel/Cartel1.jpg", alt: "Cartell" },
   { src: "/imagines/Esclat/Carousel/Entradas.jpg", alt: "Entradas" },
-  { src: "/imagines/Esclat/Carousel/Folleto1.jpg", alt: "Folleto uno" },
   { src: "/imagines/Esclat/Carousel/Folleto2.jpg", alt: "Folleto dos" },
   { src: "/imagines/Esclat/Carousel/Keychain.png", alt: "Keychain" },
   { src: "/imagines/Esclat/Carousel/PegatinaGastada.jpg", alt: "Pegatina gastada" },
@@ -22,6 +22,12 @@ const merchItems = [
     price: "10,99€",
     image: "/imagines/Esclat/Carousel/CajasMockups.jpg",
     alt: "Caixa Esclat",
+  },
+  {
+    name: "Cartell",
+    price: "14,99€",
+    image: "/imagines/Esclat/Carousel/Cartel1.jpg",
+    alt: "Cartell Esclat",
   },
   {
     name: "Clauer",

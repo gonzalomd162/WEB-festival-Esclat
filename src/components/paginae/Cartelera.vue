@@ -7,7 +7,7 @@ const lineup = {
   principales:
     "Wilco - Los Planetas - Carolina Durante - Manel - The Divine Comedy - Hoke",
   secundarios:
-    "Adam Green - Alcala Norte - Eels - El Mato a un Policia Motorizado - La Bien Querida - Ill Pekeño y Ergo Pro",
+    "Adam Green - Alcalá Norte - Eels - El Mató a un Policia Motorizado - La Bien Querida - Ill Pekeño y Ergo Pro",
   terciarios: [
     "Boletus - El diablo de Shanghai - Nepal Nepal - L`haine",
     "Rita Payés - Els Amics de les Arts - I'm From Barcelona",
@@ -64,7 +64,7 @@ const cerrarModal = () => {
 
         <RouterLink to="/" class="group flex flex-col items-end transition-transform hover:scale-105 active:scale-95">
           <span class="mb-1 text-[10px] font-black uppercase tracking-widest opacity-0 transition-opacity group-hover:opacity-100">
-            Volver a Inicio
+           Tornar a inici
           </span>
           <img
             src="/imagines/Esclat/ESCLAT.png"

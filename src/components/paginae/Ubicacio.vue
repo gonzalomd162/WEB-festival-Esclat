@@ -13,29 +13,29 @@ const transportes = [
   {
     tipo: "Metro",
     detalles:
-      "Linea 10. Parada recomendada: Ciutat Arts i Ciencies - Justicia. Aproximadamente 10-15 min caminando.",
+      "Línea 10. Parada recomanada: Ciutat Arts i Ciències - Justícia. Aproximadament 10-15 min caminant.",
   },
   {
-    tipo: "Autobus EMT",
+    tipo: "Autobús EMT",
     detalles:
-      "Lineas utiles: 4, 19, 30, 92, 95. Revisar paradas cercanas segun entrada.",
+      "Línees útils: 4, 19, 30, 92, 95. Revisar parades properes segons entrada.",
   },
   {
     tipo: "Bicicleta",
     detalles:
-      "Aparcabicis cercanos y estaciones Valenbisi alrededor de la Marina y Ciudad de las Artes.",
+      "Aparcabicis propers i estacions Valenbisi envoltant de la Marina i Ciutat de les Arts.",
   },
   {
     tipo: "Coche",
     detalles:
-      "Acceso desde Avenida del Puerto. Conexion rapida con V-21 y ronda norte/sur.",
+      "Accés des de Avinguda del Port. Conexió ràpida amb V-21 i ronda nord/sud.",
   },
 ];
 
 const parkings = [
   "Parking de la Marina",
   "Parking Umbracle",
-  "Parkings de la zona puerto/Ciudad de las Artes",
+  "Parkings de la zona Port/Ciutat de les Arts",
 ];
 </script>
 
@@ -185,11 +185,7 @@ const parkings = [
         </section>
       </div>
 
-      <div class="mt-24 flex items-center justify-between pt-8">
-        <p class="text-xs font-bold uppercase tracking-widest">
-          Esclat Festival 2026 - València
-        </p>
-      </div>
+      
     </div>
   </main>
 </template>
