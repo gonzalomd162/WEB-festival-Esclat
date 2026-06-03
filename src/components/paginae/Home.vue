@@ -24,6 +24,7 @@ const links = [
   { label: "Cartelera", to: "/cartelera" },
   { label: "Sobre el Festival", to: "/sobre-el-festival" },
   { label: "Ubicación", to: "/ubicacion" },
+  { label: "MERCH", to: "/merch" },
 ] as const;
 
 const currentVideoIndex = ref(0);
@@ -31,6 +32,7 @@ const backgroundVideo = ref<HTMLVideoElement | null>(null);
 const homeSection = ref<HTMLElement | null>(null);
 const videoSection = ref<HTMLElement | null>(null);
 const isSwitchingVideo = ref(false);
+const isAudioEnabled = ref(false);
 const currentVideo = computed<VideoItem>(
   () => videos[currentVideoIndex.value] ?? videos[0],
 );
@@ -57,8 +59,23 @@ const selectVideo = async (index: number) => {
   isSwitchingVideo.value = true;
   currentVideoIndex.value = index;
   await nextTick();
+  syncVideoAudio();
   await backgroundVideo.value?.play().catch(() => undefined);
   isSwitchingVideo.value = false;
+};
+
+const syncVideoAudio = () => {
+  const video = backgroundVideo.value;
+
+  if (!video) return;
+
+  video.muted = !isAudioEnabled.value;
+  video.volume = isAudioEnabled.value ? 1 : 0;
+};
+
+const toggleAudio = () => {
+  isAudioEnabled.value = !isAudioEnabled.value;
+  syncVideoAudio();
 };
 
 const showNextVideo = async () => {
@@ -148,13 +165,27 @@ const scrollToVideos = () => {
         :class="currentVideoScale"
         :src="currentVideo.src"
         autoplay
-        muted
+        :muted="!isAudioEnabled"
         playsinline
         aria-hidden="true"
         @click="showNextVideo"
         @ended="showNextVideo"
         @timeupdate="handleVideoProgress"
       ></video>
+
+      <button
+        type="button"
+        :aria-label="isAudioEnabled ? 'Desactivar audio del video' : 'Activar audio del video'"
+        class=" left-8 top-8 z-50 flex h-12 w-12 items-center justify-center bg-transparent p-0 transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:left-6 sm:top-6 sm:h-20 sm:w-20"
+        @click="toggleAudio"
+      >
+        <img
+          :src="isAudioEnabled ? '/imagines/Esclat/UNMUTE.png' : '/imagines/Esclat/MUTE.png'"
+          alt=""
+          class="h-full w-full object-contain"
+          aria-hidden="true"
+        >
+      </button>
 
       <button
         type="button"

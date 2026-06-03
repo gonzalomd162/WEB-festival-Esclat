@@ -1,4 +1,28 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
+const introVideo = ref<HTMLVideoElement | null>(null);
+const contentSection = ref<HTMLElement | null>(null);
+const isAudioEnabled = ref(false);
+
+const syncVideoAudio = () => {
+  const video = introVideo.value;
+
+  if (!video) return;
+
+  video.muted = !isAudioEnabled.value;
+  video.volume = isAudioEnabled.value ? 1 : 0;
+};
+
+const toggleAudio = () => {
+  isAudioEnabled.value = !isAudioEnabled.value;
+  syncVideoAudio();
+};
+
+const scrollToContent = () => {
+  contentSection.value?.scrollIntoView({ behavior: "smooth" });
+};
+
 const highlights = [
   {
     value: "3 Dies de festival",
@@ -32,10 +56,64 @@ const experience = [
 </script>
 
 <template>
-  <main class="relative min-h-screen overflow-hidden bg-[#fcda4b] p-4 font-sans text-[#eb1d2b] selection:bg-[#eb1d2b] selection:text-[#fcda4b] md:p-8">
-    <div class="relative z-10 mx-auto max-w-[1700px] p-8 md:p-16 lg:p-24">
-      <div class="relative z-10">
-        <div class="mb-12 flex items-end justify-between pb-4">
+  <div class="bg-[#fcda4b] text-[#eb1d2b]">
+    <section class="relative flex min-h-dvh flex-col overflow-hidden bg-black px-6 py-8 text-[#fcda4b] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+      <video
+        ref="introVideo"
+        class="absolute inset-0 z-0 h-full w-full bg-black object-cover"
+        src="/videos/CORTOWEB.mp4"
+        autoplay
+        :muted="!isAudioEnabled"
+        loop
+        playsinline
+        aria-hidden="true"
+      ></video>
+
+      <button
+        type="button"
+        :aria-label="isAudioEnabled ? 'Desactivar audio del video' : 'Activar audio del video'"
+        class="absolute left-4 top-4 z-30 flex h-8 w-8 items-center justify-center bg-transparent p-0 transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:left-6 sm:top-6 sm:h-16 sm:w-16"
+        @click="toggleAudio"
+      >
+        <img
+          :src="isAudioEnabled ? '/imagines/Esclat/UNMUTE.png' : '/imagines/Esclat/MUTE.png'"
+          alt=""
+          class="h-full w-full object-contain"
+          aria-hidden="true"
+        >
+      </button>
+
+      <RouterLink
+        to="/"
+        class="group absolute right-6 top-6 z-30 flex flex-col items-end transition-transform hover:scale-105 active:scale-95 sm:right-10 sm:top-8"
+      >
+        <span class="mb-1 text-[10px] font-black uppercase tracking-widest text-[#fcda4b] opacity-0 transition-opacity group-hover:opacity-100">Volver a inicio</span>
+        <img
+          src="/imagines/Esclat/ESCLAT.png"
+          alt="Botón de inicio"
+          class="h-auto w-20 object-contain md:w-32"
+        >
+      </RouterLink>
+
+      <button
+        type="button"
+        aria-label="Bajar a la informacion del festival"
+        class="absolute bottom-2 left-1/2 z-30 flex h-16 w-16 -translate-x-1/2 items-center justify-center bg-transparent p-0 transition-transform hover:translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#fcda4b] sm:bottom-3 sm:h-20 sm:w-20"
+        @click="scrollToContent"
+      >
+        <img
+          src="/imagines/Esclat/AMARILLA.png"
+          alt=""
+          class="h-full w-full object-contain"
+          aria-hidden="true"
+        >
+      </button>
+    </section>
+
+    <main ref="contentSection" class="relative min-h-screen overflow-hidden bg-[#fcda4b] p-4 font-sans text-[#eb1d2b] selection:bg-[#eb1d2b] selection:text-[#fcda4b] md:p-8">
+      <div class="relative z-10 mx-auto max-w-[1700px] p-8 md:p-16 lg:p-24">
+        <div class="relative z-10">
+          <div class="mb-12 flex items-end justify-between pb-4">
           <h2 class="text-6xl font-black uppercase leading-[0.8] tracking-tighter md:text-9xl">Informació</h2>
           <RouterLink to="/" class="group flex flex-col items-end transition-transform hover:scale-105 active:scale-95">
             <span class="mb-1 text-[10px] font-black uppercase tracking-widest opacity-0 transition-opacity group-hover:opacity-100">Volver a inicio</span>
@@ -51,7 +129,7 @@ const experience = [
           <section class="flex flex-col lg:col-span-8">
             <div>
               <div
-                v-for="(item, idx) in highlights"
+                v-for="item in highlights"
                 :key="item.label"
                 class="group -mx-4 grid grid-cols-1 gap-4 px-4 py-10 transition-all duration-300 md:-mx-6 md:grid-cols-[240px_1fr] md:gap-24 md:px-6 lg:-mx-8 lg:px-8"
               >
@@ -147,4 +225,5 @@ const experience = [
       </div>
     </div>
   </main>
+  </div>
 </template>

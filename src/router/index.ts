@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Cartelera from "@/components/paginae/Cartelera.vue";
 import Home from "@/components/paginae/Home.vue";
+import Merch from "@/components/paginae/Merch.vue";
 import SobreFestival from "@/components/paginae/SobreFestival.vue";
 import Tickets from "@/components/paginae/Tickets.vue";
 import Ubicacio from "@/components/paginae/Ubicacio.vue";
@@ -37,6 +38,12 @@ export const router = createRouter({
       name: "ubicacion",
       component: Ubicacio,
       meta: { title: "Ubicacion" },
+    },
+    {
+      path: "/merch",
+      name: "merch",
+      component: Merch,
+      meta: { title: "Merch" },
     },
     {
       path: "/tickets",
