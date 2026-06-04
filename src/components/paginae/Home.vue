@@ -223,7 +223,7 @@ const scrollToVideos = () => {
       <div class="grid gap-10 md:grid-cols-2">
         <div class="space-y-4">
           <p class="font-hover-alt text-[clamp(2.3rem,4.6vw,4rem)] font-bold uppercase leading-none tracking-normal">
-            Contacto
+            Contacte
           </p>
           <!-- <h2 class="text-3xl uppercase leading-none sm:text-4xl">
             Informacion del festival

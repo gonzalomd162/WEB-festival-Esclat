@@ -5,7 +5,7 @@ const carouselItems = [
   { src: "/imagines/Esclat/Carousel/CajaMockupSola.jpg", alt: "Caja mockup sola" },
   { src: "/imagines/Esclat/Carousel/CajasMockups.jpg", alt: "Cajas mockups" },
   { src: "/imagines/Esclat/Carousel/Cartel1.jpg", alt: "Cartell" },
-  { src: "/imagines/Esclat/Carousel/Keychain.png", alt: "Keychain" },
+  { src: "/imagines/Esclat/Carousel/Keychain.jpg", alt: "Keychain" },
   { src: "/imagines/Esclat/Carousel/PegatinaGastada.jpg", alt: "Pegatina gastada" },
   { src: "/imagines/Esclat/Carousel/PegatinaLevantada.jpg", alt: "Pegatina levantada" },
   { src: "/imagines/Esclat/Carousel/PegatinaPuestaBien.jpg", alt: "Pegatina puesta" },
@@ -31,7 +31,7 @@ const merchItems = [
   {
     name: "Clauer",
     price: "24,99€",
-    image: "/imagines/Esclat/Carousel/Keychain.png",
+    image: "/imagines/Esclat/Carousel/Keychain.jpg",
     alt: "Clauer Esclat",
   },
   {

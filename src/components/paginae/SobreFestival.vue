@@ -104,7 +104,7 @@ const experience = [
         <img
           src="/imagines/Esclat/AMARILLA.png"
           alt=""
-          class="h-full w-full object-contain"
+          class="h-full w-full object-contain rotate-180"
           aria-hidden="true"
         >
       </button>
