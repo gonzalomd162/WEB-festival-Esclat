@@ -5,15 +5,14 @@ const carouselItems = [
   { src: "/imagines/Esclat/Carousel/CajaMockupSola.jpg", alt: "Caja mockup sola" },
   { src: "/imagines/Esclat/Carousel/CajasMockups.jpg", alt: "Cajas mockups" },
   { src: "/imagines/Esclat/Carousel/Cartel1.jpg", alt: "Cartell" },
-  { src: "/imagines/Esclat/Carousel/Entradas.jpg", alt: "Entradas" },
-  { src: "/imagines/Esclat/Carousel/Folleto2.jpg", alt: "Folleto dos" },
   { src: "/imagines/Esclat/Carousel/Keychain.png", alt: "Keychain" },
   { src: "/imagines/Esclat/Carousel/PegatinaGastada.jpg", alt: "Pegatina gastada" },
   { src: "/imagines/Esclat/Carousel/PegatinaLevantada.jpg", alt: "Pegatina levantada" },
   { src: "/imagines/Esclat/Carousel/PegatinaPuestaBien.jpg", alt: "Pegatina puesta" },
   { src: "/imagines/Esclat/Carousel/PegatinasJuntas.jpg", alt: "Pegatinas juntas" },
-  { src: "/imagines/Esclat/Carousel/Staff.jpg", alt: "Staff" },
   { src: "/imagines/Esclat/Carousel/Wristband.jpg", alt: "Wristband" },
+  { src: "/imagines/Esclat/Carousel/Cantimplora.jpg", alt: "Cantimplora" },
+  { src: "/imagines/Esclat/Carousel/Samarreta.jpg", alt: "Samarreta" },
 ] as const;
 
 const merchItems = [
@@ -44,7 +43,7 @@ const merchItems = [
   {
     name: "Cantimplora",
     price: "7,99€",
-    image: "/imagines/Esclat/Carousel/Cantimplora.png",
+    image: "/imagines/Esclat/Carousel/Cantimplora.jpg",
     alt: "Cantimplora Esclat",
   },
   {

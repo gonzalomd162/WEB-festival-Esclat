@@ -99,7 +99,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
               <div
                 v-for="ticket in ticketsDia"
                 :key="ticket.id"
-                class="group -mx-4 grid cursor-pointer grid-cols-1 gap-4 px-4 py-10 transition-all duration-300 hover:bg-[#eb1d2b]/10 md:-mx-6 md:grid-cols-[240px_1fr_150px] md:gap-12 md:px-6 lg:-mx-8 lg:px-8"
+                class="group -mx-4 grid cursor-pointer grid-cols-1 gap-4 px-4 py-10 transition-all duration-300 hover:bg-[#eb1d2b]/10 md:-mx-6 md:grid-cols-[240px_1fr_150px] md:gap-6 md:px-6 lg:-mx-8 lg:px-8"
                 role="button"
                 tabindex="0"
                 @click="abrirDetalleDia(ticket)"
@@ -200,7 +200,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
             <span class="mb-3 block text-sm font-black tracking-widest opacity-70">Ubicació principal</span>
             <span class="block text-4xl font-black leading-[0.85] tracking-tighter md:text-6xl">
               Les <br>
-              naus <br>
+              Naus <br>
               Valencia
             </span>
           </div>
@@ -216,7 +216,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
           </div>
 
           <p class="max-w-[20rem] text-sm font-bold uppercase leading-tight opacity-75 md:mt-1">
-            * Aforament limitat. Es recomana la reserva anticipada per evitar cues. L'organitzacio se reserva el dret d'admissio.
+            * Aforament limitat. Es recomana la reserva anticipada per evitar cues. L'organitzacio se reserva el dret d'admissió.
           </p>
         </div>
       </div>
@@ -246,7 +246,7 @@ const obtenerArtistasDia = (ticket: TicketDia) => [
             <span class="block text-[6.5rem] font-black leading-[0.75] tracking-tighter md:text-[8rem]">
               {{ ticketSeleccionado.fecha }}
             </span>
-            <span class="mt-3 block text-lg font-black uppercase leading-none tracking-tighter md:text-xl">
+            <span class="mt-3 block text-lg font-black  leading-none tracking-tighter md:text-xl">
               {{ ticketSeleccionado.mes }}
             </span>
           </div>
