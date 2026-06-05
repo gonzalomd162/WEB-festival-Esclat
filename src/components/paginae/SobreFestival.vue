@@ -61,7 +61,7 @@ const experience = [
       <video
         ref="introVideo"
         class="absolute inset-0 z-0 h-full w-full bg-black object-cover"
-        src="/videos/CORTOWEB.mp4"
+        src="/videos/CORTOWEBB.mp4"
         autoplay
         :muted="!isAudioEnabled"
         loop
@@ -102,9 +102,9 @@ const experience = [
         @click="scrollToContent"
       >
         <img
-          src="/imagines/Esclat/AMARILLA.png"
+          src="/imagines/Esclat/ROJA.png"
           alt=""
-          class="h-full w-full object-contain rotate-180"
+          class="h-full w-full object-contain "
           aria-hidden="true"
         >
       </button>
